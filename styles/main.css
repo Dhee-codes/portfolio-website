@@ -1,0 +1,296 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    line-height: 1.6;
+}
+
+* {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    margin: 25px auto;
+    color: #ebe7f6;
+    background-color: #060110;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Special Gothic Expanded One", sans-serif;
+}
+
+h2 {
+    font-size: 5em;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.para {
+    font-size: 1.8em;
+    letter-spacing: 1.2px;
+    margin-bottom: 50px;
+}
+
+.welcome-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.welcome-section div {
+    width: 65%;
+    text-align: center;
+}
+
+.welcome-head {
+    font-size: 6em;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.welcome-para {
+    font-size: 2em;
+    font-weight: 400;
+    margin-bottom: 50px;
+}
+
+.highlight {
+    background: linear-gradient(to right, #ff0000, #ffb3b3);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.link-btn, .download-btn {
+    color: #99ffff;
+    font-size: 1.6em;
+    text-decoration: none;
+    display: inline-block;
+    padding: 16px 32px;
+    margin-right: 29px;
+}
+
+.link-btn {
+    border: 1px solid #99ffff;
+    box-shadow: 0 0 5px #3a0ca3, 0 0 10px #99ffff;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+.link-btn:hover {
+    text-decoration: none;
+    transform: scale(1.1);
+}
+
+.link-btn:visited {
+    color: #99ffff;
+}
+
+.download-btn {
+    background: linear-gradient(to right, #3a0ca3, #3a0ca3, #009999);
+    transform: scale(1);
+    transition: background-color 0.3s ease, transform 0.3 ease;
+}
+
+.download-btn:hover {
+    background: linear-gradient(to right, #3a0ca3, #3a0ca3, #009999);
+}
+
+.download-btn:active {
+    transform: scale(0.95);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 -1px 5px #99ffff;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 50px;
+}
+
+/* .logo {
+    
+} */
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 3.6em;
+}
+
+.nav-links a:link {
+    color: #99ffff;
+    text-decoration: none;
+    font-size: 1.6em;
+}
+
+.nav-links a:visited {
+    color: #99ffff;
+}
+
+.nav-links a:hover {
+    color: #009999;
+}
+
+.profile {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 200px;
+    padding-top: 40px;
+    margin-bottom: 100px;
+}
+
+.profile div {
+    padding: 30px 5px;
+    margin: 15px 80px;
+}
+
+.profile-pic {
+    width: 200;
+    height: auto;
+    border: 2px solid #99ffff;
+    margin-top: 70px;
+    box-shadow: 0 0 10px #3a0ca3, 0 0 20px #99ffff;
+    border-radius: 50%;
+}
+
+.off-color-subhead {
+    color: #ff4d4d;
+    font-size: 2.6em;
+    font-weight: 900;
+    margin-bottom: 30px;
+}
+
+.projects {
+    padding-top: 80px;
+}
+
+.contacts {
+    padding-top: 80px;
+    margin-bottom: 100px;
+}
+
+.contacts-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.contacts-head {
+    text-align: center;
+}
+
+.socials, .message-form {
+    margin: 50px 80px;
+    padding: 12px;
+}
+
+.social-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.bi {
+    color: #99ffff;
+    width: 32px;
+    height: auto;
+    transform: scale(1);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.bi:hover {
+    transform: scale(1.5);
+}
+
+.bi-github:hover {
+    color: #343232;
+}
+
+.bi-linkedin:hover {
+    color: #0027b5;
+}
+
+.bi-instagram:hover {
+    color: #e1306c;
+}
+
+.bi-envelope:hover {
+    color: #5c5c5c;
+}
+
+input, textarea, button {
+    display: block;
+    width: 100%;
+    border: none;
+    margin-top: 3px;
+    padding: 15px 10px;
+}
+
+input, textarea {
+    background-color: #1b0548;
+    margin-bottom: 32px;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #d3d3d3;
+    font-style: italic;
+    opacity: 0.7;
+}
+
+input:focus, textarea:focus {
+    outline: 1px solid #99ffff;
+}
+
+label {
+    display: block;
+}
+
+label, button {
+    font-size: 1.6em;
+}
+
+.smt-btn {
+    color: #ebe7f6;
+    background: linear-gradient(to right, #ff0000, #ff0000, #ffb3b3);
+    cursor: pointer;
+    transform: scale(1);
+    transition: background-color 0.3s ease, transform 0.3 ease;
+}
+
+.smt-btn:hover {
+    background: linear-gradient(to right, #b30000, #b30000, #ff6666);
+}
+
+.smt-btn:active {
+    transform: scale(0.97);
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 50px;
+}
+
+footer p {
+    font-size: 1.4em;
+}
