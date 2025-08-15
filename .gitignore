@@ -1,0 +1,7 @@
+# System files
+DB_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
