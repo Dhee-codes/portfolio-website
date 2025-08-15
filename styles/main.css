@@ -74,7 +74,6 @@ h2 {
     text-decoration: none;
     display: inline-block;
     padding: 16px 32px;
-    margin-right: 29px;
 }
 
 .link-btn {
@@ -94,6 +93,7 @@ h2 {
 }
 
 .download-btn {
+    margin-left: 30px;
     background: linear-gradient(to right, #3a0ca3, #3a0ca3, #009999);
     transform: scale(1);
     transition: background-color 0.3s ease, transform 0.3 ease;
@@ -139,6 +139,7 @@ header {
     color: #99ffff;
     text-decoration: none;
     font-size: 1.6em;
+    padding: 8px;
 }
 
 .nav-links a:visited {
