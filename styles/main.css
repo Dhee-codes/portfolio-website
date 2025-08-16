@@ -177,7 +177,7 @@ header {
 .off-color-subhead {
     color: #ff4d4d;
     font-size: 2.6em;
-    font-weight: 900;
+    font-weight: 500;
     margin-bottom: 30px;
 }
 
@@ -209,6 +209,7 @@ header {
     list-style: none;
     display: flex;
     gap: 40px;
+    margin-top: 10px;
 }
 
 .bi {
@@ -236,7 +237,37 @@ header {
 }
 
 .bi-envelope:hover {
-    color: #5c5c5c;
+    color: #d6ffff;
+}
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden;
+    opacity: 0;
+    width: max-content;
+    background-color: #1f1a28;
+    color: #88b3b3;
+    font-size: 1.2em;
+    text-align: center;
+    padding: 4px 8px;
+    margin-bottom: 8px;
+    position: absolute;
+    z-index: 10;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
 }
 
 input, textarea, button {
