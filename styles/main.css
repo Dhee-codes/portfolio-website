@@ -263,6 +263,7 @@ header {
     transform: translateX(-50%);
     white-space: nowrap;
     transition: opacity 0.3s ease, visibility 0.3s ease;
+    pointer-events: none;
 }
 
 .tooltip:hover .tooltip-text {
@@ -279,6 +280,7 @@ input, textarea, button {
 }
 
 input, textarea {
+    color: #99ffff;
     background-color: #1b0548;
     margin-bottom: 32px;
 }
@@ -291,6 +293,14 @@ input::placeholder, textarea::placeholder {
 
 input:focus, textarea:focus {
     outline: 1px solid #99ffff;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+  background-color: #1b0548 !important;
+  color: #99ffff !important;
+  transition: background-color 100000s ease-in-out 0s;
+  -webkit-text-fill-color: #99ffff !important;
 }
 
 label {
