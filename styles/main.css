@@ -53,12 +53,61 @@ h2 {
     font-size: 6em;
     font-weight: 400;
     margin-bottom: 30px;
+    opacity: 0;
+    animation: fade-in-up 1s ease-out forwards;
+    animation-delay: 1s;
+}
+
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 2s ease;
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .welcome-para {
-    font-size: 2em;
+    font-size: 2.2em;
     font-weight: 400;
     margin-bottom: 50px;
+    opacity: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: text-reveal 2s steps(40, end) forwards;
+    animation-delay: 1.2s;
+    animation-name: text-reveal, fade-in;
+    animation-duration: 2s, 0.5s;
+    animation-delay: 1.2s 3.2s;
+}
+
+@keyframes text-reveal {
+    from {
+        clip-path: inset(0 100% 0 0);
+        transition: opacity 2s ease;
+    }
+    to {
+        clip-path: inset(0 0 0 0);
+        opacity: 1;
+    }
+}
+
+.explore-btn {
+    opacity: 0;
+    animation: fade-in 0.5s ease-out forwards;
+    animation-delay: 3.2s;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .highlight {
@@ -336,4 +385,21 @@ footer {
 
 footer p {
     font-size: 1.4em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .welcome-head,
+    .welcome-para,
+    .explore-btn {
+        animation: none !important;
+        transition: none !important;
+        transform: none;
+        opacity: 1;
+    }
+
+    .welcome-para {
+        width: auto;
+        overflow: visible;
+        white-space: normal;
+    }
 }
