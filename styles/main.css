@@ -158,7 +158,7 @@ a:hover, a:focus {
     transition: transform 0.3s ease;
 }
 
-.link-btn:hover, .download-btn:hover {
+.link-btn:hover {
     text-decoration: none;
     transform: scale(1.1);
 }
@@ -171,6 +171,7 @@ a:hover, a:focus {
 }
 
 .download-btn:hover {
+    text-decoration: none;
     background: linear-gradient(to right, #280971, #280971, #006666);
 }
 
