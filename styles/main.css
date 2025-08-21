@@ -1,3 +1,12 @@
+:root {
+    --accent-color: #e889e5;
+    --background-color: #010417;
+    --text-color: #c6c4cc;
+    --gradient-color: linear-gradient(to right, #04afc2, #82edf9);
+    --button-color: linear-gradient(45deg, #031473, #031473, #04afc2);
+    --button-hover-color: linear-gradient(45deg, #02105c, #02105c, #038391);
+}
+
 html {
     box-sizing: border-box;
     font-size: 62.5%;
@@ -13,8 +22,8 @@ html {
 body {
     width: 100%;
     margin: 2.5rem auto;
-    color: #ebe7f6;
-    background-color: #060110;
+    color: var(--text-color);
+    background-color: var(--background-color);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -30,7 +39,7 @@ h2 {
 }
 
 h3 {
-    color: #ff4d4d;
+    color: #9aa1c7;
     font-size: 2.6rem;
     font-weight: 500;
     margin-bottom: 3rem;
@@ -39,16 +48,15 @@ h3 {
 p {
     font-size: 1.8rem;
     letter-spacing: 0.12em;
-    margin-bottom: 5rem;
 }
 
 a:link, a:visited {
-    color: #99ffff;
+    color: #82edf9;
     text-decoration: none;
 }
 
 a:hover, a:focus {
-    color: #009999;
+    color: #038391;
     text-decoration: underline;
 }
 
@@ -113,7 +121,8 @@ a:hover, a:focus {
     }
 }
 
-.btn-animate {
+.welcome-section .btn-animate {
+    padding: 1.2em 3em;
     opacity: 0;
     animation: fade-in 0.5s ease-out forwards;
     animation-delay: 3.2s;
@@ -129,7 +138,7 @@ a:hover, a:focus {
 }
 
 .highlight {
-    background: linear-gradient(to right, #ff0000, #ffb3b3);
+    background: var(--gradient-color);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -137,53 +146,55 @@ a:hover, a:focus {
 
 
 
-.link-btn, .download-btn,
+.link-btn:link, .download-btn:link,
 .link-btn:visited, .download-btn:visited,
 .link-btn:hover, .download-btn:hover {
-    color: #99ffff;
+    color: #fefeff;
 }
 
 .link-btn, .download-btn {
     font-size: 1.6rem;
     text-decoration: none;
     display: inline-block;
-    padding: 1.2em 3em;
+    padding: 1.2em 2.6em;
 }
 
 .link-btn {
-    border: 1px solid #99ffff;
-    background-color: #0c0221;
-    box-shadow: 0 0 5px #3a0ca3, 0 0 10px #99ffff;
+    background-color: #010622;
+    box-shadow: 0 0 8px var(--accent-color);
     transform: scale(1);
     transition: transform 0.3s ease;
 }
 
 .link-btn:hover {
-    text-decoration: none;
     transform: scale(1.1);
+}
+
+.link-btn:hover, .download-btn:hover,
+.link-btn:focus, .download-btn:focus {
+    text-decoration: none;
 }
 
 .download-btn {
     margin-left: 3rem;
-    background: linear-gradient(to right, #3a0ca3, #3a0ca3, #009999);
+    background: var(--button-color);
     transform: scale(1);
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .download-btn:hover {
-    text-decoration: none;
-    background: linear-gradient(to right, #280971, #280971, #006666);
+    background: var(--button-hover-color);
 }
 
 .download-btn:active {
-    transform: scale(0.95);
+    transform: scale(0.93);
 }
 
 header {
     position: fixed;
     top: 0;
     width: 100%;
-    box-shadow: 0 -1px 5px #99ffff;
+    box-shadow: 0 -1px 5px var(--text-color);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     background-color: rgba(0, 0, 0, 0.5);
@@ -209,18 +220,18 @@ header {
 }
 
 .nav-links a:link {
-    color: #99ffff;
+    color: #cdd0e3;
     text-decoration: none;
     font-size: 1.6rem;
     padding: 1.2rem;
 }
 
 .nav-links a:visited {
-    color: #99ffff;
+    color: #cdd0e3;
 }
 
 .nav-links a:hover {
-    color: #009999;
+    color: #6872ab;
 }
 
 .profile {
@@ -232,17 +243,24 @@ header {
     margin-bottom: 10rem;
 }
 
+.profile h2 {
+    font-size: 5rem;
+}
+
 .profile div {
     padding: 3rem 0.5rem;
     margin: 1.5rem 8rem;
 }
 
+.profile p, .contacts p {
+    margin-bottom: 5rem;
+}
+
 .profile img {
     width: 200;
     height: auto;
-    border: 2px solid #99ffff;
     margin: 4rem;
-    box-shadow: 0 0 10px #3a0ca3, 0 0 20px #99ffff;
+    box-shadow: 0 0 18px var(--accent-color);
     border-radius: 50%;
 }
 
@@ -255,11 +273,14 @@ header {
     text-align: center;
 }
 
+.tech-stack h2, .projects h2 {
+    margin-bottom: 10rem;
+}
+
 .tech-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 20px;
-    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     align-items: center;
     padding: 1.6rem 0;
 }
@@ -269,8 +290,8 @@ header {
 }
 
 .tech-item img {
-    width: 64px;
-    height: 64px;
+    width: 60px;
+    height: 60px;
     object-fit: contain;
 }
 
@@ -280,7 +301,7 @@ header {
 
 .projects a {
     text-decoration: none;
-    color: #ebe7f6;
+    color: var(--text-color);
 }
 
 .project-grid {
@@ -291,10 +312,9 @@ header {
 }
 
 .project-card {
-    background: #0c0221;
-    border: 2px solid #99ffff;
+    background: #010622;
     overflow: hidden;
-    box-shadow: 0 0 10px #3a0ca3, 0 0 20px #99ffff;
+    box-shadow: 0 0 8px var(--accent-color);
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease;
@@ -312,6 +332,7 @@ header {
 
 .project-card:hover {
     transform: scale(1.05);
+    box-shadow: 0 0 18px var(--accent-color);
 }
 
 .contacts {
@@ -333,7 +354,7 @@ header {
 }
 
 .bi {
-    color: #99ffff;
+    color: var(--text-color);
     width: 3.2rem;
     height: auto;
     transform: scale(1);
@@ -360,7 +381,6 @@ header {
     color: #d6ffff;
 }
 
-
 .tooltip {
     position: relative;
     display: inline-block;
@@ -370,8 +390,8 @@ header {
     visibility: hidden;
     opacity: 0;
     width: max-content;
-    background-color: #1f1a28;
-    color: #88b3b3;
+    background-color: #020a3a;
+    color: var(--text-color);
     font-size: 1.2rem;
     text-align: center;
     padding: 0.2em 0.4em;
@@ -386,7 +406,7 @@ header {
     pointer-events: none;
 }
 
-.tooltip:hover .tooltip-text {
+.tooltip:hover .tooltip-text, .tooltip:focus .tooltip-text {
     visibility: visible;
     opacity: 1;
 }
@@ -400,8 +420,8 @@ input, textarea, button {
 }
 
 input, textarea {
-    color: #99ffff;
-    background-color: #1b0548;
+    color: var(--text-color);
+    background-color: #020a3a;
     margin-bottom: 3.2rem;
 }
 
@@ -412,15 +432,15 @@ input::placeholder, textarea::placeholder {
 }
 
 input:focus, textarea:focus {
-    outline: 1px solid #99ffff;
+    outline: 1px solid var(--text-color);
 }
 
 input:-webkit-autofill,
 textarea:-webkit-autofill {
-  background-color: #1b0548 !important;
-  color: #99ffff !important;
+  background-color: #020a3a !important;
+  color: var(--text-color) !important;
   transition: background-color 100000s ease-in-out 0s;
-  -webkit-text-fill-color: #99ffff !important;
+  -webkit-text-fill-color: var(--text-color) !important;
 }
 
 label {
@@ -432,15 +452,16 @@ label, button {
 }
 
 .smt-btn {
-    color: #ebe7f6;
-    background: linear-gradient(to right, #ff0000, #ff0000, #ffb3b3);
+    color: #fefeff;
+    background: var(--button-color);
+    margin-top: 0.5rem;
     cursor: pointer;
     transform: scale(1);
     transition: background-color 0.3s ease, transform 0.3 ease;
 }
 
 .smt-btn:hover {
-    background: linear-gradient(to right, #b30000, #b30000, #ff6666);
+    background: var(--button-hover-color);
 }
 
 .smt-btn:active {
