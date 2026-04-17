@@ -1,12 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f1f1f1;
-  --foreground: #010417;
-  --accent: #e889e5;
-  --gradient: linear-gradient(to right, #04afc2, #82edf9);
-  --btn-primary: linear-gradient(45deg, #031473, #031473, #04afc2);
-  --btn-primary-hover: linear-gradient(45deg, #02105c, #02105c, #038391);
+  --background: #ededfc;
+  --foreground: #181545;
+  --primary: #4f46e5;
+  --primary-light: #9590ef;
+  --accent: #a7a3f2;
 }
 
 @theme inline {
@@ -15,14 +14,19 @@
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
   --color-accent: var(--accent);
-  --color-btn-primary: var(--btn-primary);
-  --color-btn-primary-hover: var(--btn-primary-hover);
+
+  --text-sz-xl: clamp(1.75rem, calc(2.857vw + 1.17rem), 3.75rem);
+  --text-sz-md: clamp(1rem, calc(0.714vw + 0.857rem), 1.5rem);
 }
 
 .dark {
-  --background: #010417;
-  --foreground: #c6c4cc;
+  --background: #1a1c32;
+  --foreground: #f2f4fe;
+  --primary: #818cf8;
+  --primary-light: #b3bafb;
 }
 
 body {
@@ -36,4 +40,10 @@ h1,
 h2,
 h3 {
   font-family: var(--font-gothic), sans-serif;
+}
+
+@utility gradient-highlight {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
+  background-clip: text;
+  color: transparent;
 }
