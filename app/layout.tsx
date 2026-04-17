@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Special_Gothic_Expanded_One, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const gothic = Special_Gothic_Expanded_One({
   variable: "--font-gothic",
@@ -32,6 +33,7 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col">
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

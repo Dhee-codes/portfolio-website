@@ -38,7 +38,7 @@ export default function About() {
             View my projects
           </Link>
           <Link
-            href="/docs/DheeLabs_Resume.pdf"
+            href="/docs/DheeCodes_Resume.pdf"
             download
             className="text-white text-base px-8 py-4 hover:scale-95 active:scale-95 transition-transform duration-300"
             style={{ background: "var(--btn-primary)" }}
