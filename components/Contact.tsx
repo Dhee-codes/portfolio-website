@@ -59,7 +59,7 @@ export default function Contact() {
           <ul className="flex gap-10 list-none">
             <li>
               <a
-                href="https://github.com/DheeLabs"
+                href="https://github.com/Dhee-Codes"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#c6c4cc] hover:text-[#343232] transition-colors duration-300"
@@ -77,7 +77,7 @@ export default function Contact() {
             </li>
             <li>
               <a
-                href="https://www.linkedin.com/in/DheeLabs"
+                href="https://www.linkedin.com/in/dheecodes"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#c6c4cc] hover:text-[#0027b5] transition-colors duration-300"

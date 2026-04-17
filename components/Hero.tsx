@@ -48,7 +48,7 @@ export function Typewriter({ text, className }: TypewriterProps) {
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center text-center px-2 pt-25">
+    <section className="min-h-screen flex flex-col justify-center items-center text-center px-2">
       <div className="md:w-[65%]">
         <motion.h1
           className="text-sz-xl mb-6 leading-tight"

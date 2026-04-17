@@ -4,13 +4,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-
-const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/#about" },
-  { label: "Projects", href: "/#projects" },
-  { label: "Contact", href: "/#contact" },
-];
+import { navLinks, type Navlink } from "@/app/constants/navlinks";
 
 const linkClass =
   "text-foreground hover:text-primary transition-colors duration-300 font-medium px-3 py-2";
@@ -20,7 +14,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 w-full z-50 shadow-md backdrop-blur-md bg-white/30">
+      <header className="fixed top-0 left-0 w-full z-50 shadow-md backdrop-blur-md bg-white/70">
         <nav className="flex justify-between items-center px-6 md:px-16 py-4 md:py-6">
           <Link href="/">
             <Image
@@ -34,7 +28,7 @@ export default function Navbar() {
           </Link>
 
           <ul className="hidden md:flex gap-6 list-none">
-            {navLinks.map((link) => (
+            {navLinks.map((link: Navlink) => (
               <li key={link.href}>
                 <Link
                   href={link.href}

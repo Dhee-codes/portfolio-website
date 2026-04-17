@@ -19,6 +19,7 @@
   --color-accent: var(--accent);
 
   --text-sz-xl: clamp(1.75rem, calc(2.857vw + 1.17rem), 3.75rem);
+  --text-sz-lg: clamp(1.5rem, calc(2.142vw + 1.366rem), 3rem);
   --text-sz-md: clamp(1rem, calc(0.714vw + 0.857rem), 1.5rem);
 }
 
@@ -46,4 +47,8 @@ h3 {
   background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
   background-clip: text;
   color: transparent;
+}
+
+@utility el-shadow {
+  box-shadow: 0 0 12px var(--primary-light);
 }

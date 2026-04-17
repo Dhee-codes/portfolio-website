@@ -3,7 +3,7 @@ import Image from "next/image";
 import { projects } from "@/lib/projects";
 
 export const metadata = {
-  title: "Projects | DheeLabs",
+  title: "Projects | DheeCodes",
   description: "All projects by Divine Obiorah.",
 };
 
