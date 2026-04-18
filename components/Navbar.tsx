@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { navLinks, type Navlink } from "@/app/constants/navlinks";
+import { navLinks, type Navlink } from "@/lib/navlinks";
 
 const linkClass =
   "text-foreground hover:text-primary transition-colors duration-300 font-medium px-3 py-2";
@@ -16,14 +16,12 @@ export default function Navbar() {
     <>
       <header className="fixed top-0 left-0 w-full z-50 shadow-md backdrop-blur-md bg-white/70">
         <nav className="flex justify-between items-center px-6 md:px-16 py-4 md:py-6">
-          <Link href="/">
+          <Link href="/" className="relative w-38 md:w-45 h-10">
             <Image
               src="/images/logo/DheeCodes-light.svg"
               alt="DheeCodes logo"
-              width={180}
-              height={40}
+              fill
               priority
-              className="w-38 md:w-45 h-auto"
             />
           </Link>
 

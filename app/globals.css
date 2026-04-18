@@ -44,7 +44,11 @@ h3 {
 }
 
 @utility gradient-highlight {
-  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
+  background: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-primary-light)
+  );
   background-clip: text;
   color: transparent;
 }

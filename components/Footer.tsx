@@ -1,18 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-import { navLinks, type Navlink } from "@/app/constants/navlinks";
+import { navLinks, type Navlink } from "@/lib/navlinks";
 
 export default function Footer() {
   return (
     <footer className="flex flex-col md:flex-row md:justify-between md:items-center gap-6 bg-primary/10 px-6 lg:px-32 py-6">
-      <Link href="/">
+      <Link href="/" className="relative w-45 h-10">
         <Image
           src="/images/logo/DheeCodes-light.svg"
           alt="DheeCodes logo"
-          width={180}
-          height={40}
+          fill
           priority
-          className="w-45 h-auto"
         />
       </Link>
 
