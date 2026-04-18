@@ -14,7 +14,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 w-full z-50 shadow-md backdrop-blur-md bg-white/70">
+      <header className="fixed top-0 left-0 w-full z-50 shadow-md backdrop-blur-md bg-card/70">
         <nav className="flex justify-between items-center px-6 md:px-16 py-4 md:py-6">
           <Link href="/" className="relative w-38 md:w-45 h-10">
             <Image
@@ -22,6 +22,7 @@ export default function Navbar() {
               alt="DheeCodes logo"
               fill
               priority
+              className="object-contain"
             />
           </Link>
 

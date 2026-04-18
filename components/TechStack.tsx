@@ -44,9 +44,9 @@ const techs = [
 
 export default function TechStack() {
   return (
-    <section id="tech-stack" className="px-32 py-16 mb-40">
+    <section id="tech-stack" className="px-8 md:px-12 lg:px-32 py-16 mb-20 md:mb-32">
       <motion.h2
-        className="text-4xl font-normal text-center mb-20"
+        className="text-sz-sect text-center mb-20"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -55,11 +55,11 @@ export default function TechStack() {
         Tech Stack
       </motion.h2>
 
-      <div className="grid grid-cols-4 gap-8 justify-items-center">
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(100px,1fr))] md:grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-6 md:gap-8 place-items-center">
         {techs.map((tech, index) => (
           <motion.div
             key={tech.name}
-            className="flex flex-col items-center gap-3 p-6 w-full cursor-default rounded-sm transition-all duration-300 hover:shadow-[0_0_18px_#e889e5]"
+            className="flex flex-col items-center gap-3 p-6 w-full bg-card rounded-sm transition-all duration-300 hover:el-shadow"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: index * 0.1 }}
@@ -72,7 +72,7 @@ export default function TechStack() {
               width={60}
               height={60}
             />
-            <span className="text-sm text-[#c6c4cc]">{tech.name}</span>
+            <span className="text-sm text-text-muted">{tech.name}</span>
           </motion.div>
         ))}
       </div>

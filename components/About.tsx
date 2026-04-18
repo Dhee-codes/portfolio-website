@@ -8,7 +8,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="min-h-screen grid grid-cols-1 md:grid-cols-2 gap-4 px-8 md:px-24 lg:px-32 py-16 mb-40"
+      className="min-h-screen grid grid-cols-1 md:grid-cols-2 gap-4 px-8 md:px-12 lg:px-32 py-16 mb-20 md:mb-32"
     >
       <motion.div
         className="flex flex-col justify-center py-12"
@@ -17,7 +17,7 @@ export default function About() {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-sz-lg font-normal mb-2 md:mb-4 leading-tight">
+        <h2 className="text-sz-lg mb-2 md:mb-4 leading-tight">
           Frontend <span className="gradient-highlight">Developer</span>
         </h2>
         <h3 className="text-primary-light text-sz-md font-medium mb-8 md:mb-12">
@@ -30,17 +30,17 @@ export default function About() {
           shipped real products using React, Next.js, TypeScript, and Tailwind
           CSS... and I&pos;m just getting started.
         </p>
-        <div className="flex flex-col md:flex-row text-center gap-6">
+        <div className="flex flex-col lg:flex-row text-center gap-6">
           <Link
             href="#projects"
-            className="text-white text-base px-8 py-4 bg-primary-light hover:scale-110 transition-transform duration-300"
+            className="text-white text-base px-8 py-4 bg-primary/80 hover:scale-105 transition-transform duration-300"
           >
             View my projects
           </Link>
           <Link
             href="/docs/DheeCodes_Resume.pdf"
             download
-            className="text-background bg-foreground text-base px-8 py-4 hover:scale-110 active:scale-95 transition-transform duration-300"
+            className="text-card bg-foreground text-base px-8 py-4 hover:scale-105 active:scale-98 transition-transform duration-300"
           >
             Download Resume
           </Link>
@@ -55,7 +55,7 @@ export default function About() {
         viewport={{ once: true }}
       >
         <Image
-          src="/images/profile.jpg"
+          src="/images/profile.png"
           alt="Divine Obiorah"
           width={300}
           height={300}

@@ -68,7 +68,7 @@ export default function Hero() {
         >
           <Link
             href="/#projects"
-            className="bg-foreground text-background text-base px-8 md:px-10 py-4 md:py-5 hover:scale-110 transition-transform duration-300"
+            className="inline-block bg-foreground text-card text-base px-8 md:px-10 py-4 md:py-5 hover:scale-105 transition-transform duration-300"
           >
             Explore my work
           </Link>
