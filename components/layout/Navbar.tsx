@@ -5,6 +5,8 @@ import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { navLinks, type Navlink } from "@/lib/navlinks";
+import { useRouter } from "next/navigation";
+import ThemeToggle from "../ui/ThemeToggle";
 
 const linkClass =
   "text-foreground hover:text-primary transition-colors duration-300 font-medium px-3 py-2";
@@ -12,11 +14,23 @@ const linkClass =
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const router = useRouter();
+
+  const handleHomeClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    router.push("/");
+  };
+
   return (
     <>
       <header className="fixed top-0 left-0 w-full z-50 shadow-md backdrop-blur-md bg-card/70">
         <nav className="flex justify-between items-center px-6 md:px-16 py-4 md:py-6">
-          <Link href="/" className="relative w-38 md:w-45 h-10">
+          <Link
+            href="/"
+            onClick={handleHomeClick}
+            className="relative w-38 md:w-45 h-10"
+          >
             <Image
               src="/images/logo/DheeCodes-light.svg"
               alt="DheeCodes logo"
@@ -29,15 +43,20 @@ export default function Navbar() {
           <ul className="hidden md:flex gap-6 list-none">
             {navLinks.map((link: Navlink) => (
               <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className={`${linkClass} text-[1.25rem]`}
-                >
-                  {link.label}
-                </Link>
+                {link.label === "Home" ? (
+                  <Link href="/" onClick={handleHomeClick} className={linkClass}>
+                    {link.label}
+                  </Link>
+                ) : (
+                  <Link href={link.href} className={linkClass}>
+                    {link.label}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
+
+          <ThemeToggle />
 
           {/* Hamburger button — visible on mobile only */}
           <button

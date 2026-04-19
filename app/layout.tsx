@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { Special_Gothic_Expanded_One, Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import { Providers } from "./providers";
 
 const gothic = Special_Gothic_Expanded_One({
   variable: "--font-gothic",
   subsets: ["latin"],
-  weight: "400"
+  weight: "400",
 });
 
 const inter = Inter({
@@ -28,12 +29,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${gothic.variable} ${inter.variable} antialiased`}
+      className={`${gothic.variable} ${inter.variable} antialiased suppressHydrationWarning`}
     >
       <body className="min-h-screen flex flex-col">
-        <Navbar />
-        {children}
-        <Footer />
+        <Providers>
+          <Navbar />
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

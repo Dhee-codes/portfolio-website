@@ -3,8 +3,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 export default function About() {
+  const router = useRouter();
+
+  const handleExplore = (e: React.MouseEvent) => {
+    e.preventDefault();
+    router.push("/#projects");
+    document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+  };
+  
   return (
     <section
       id="about"
@@ -33,6 +42,7 @@ export default function About() {
         <div className="flex flex-col lg:flex-row text-center gap-6">
           <Link
             href="#projects"
+            onClick={handleExplore}
             className="text-white text-base px-8 py-4 bg-primary/80 hover:scale-105 transition-transform duration-300"
           >
             View my projects

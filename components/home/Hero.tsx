@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 interface TypewriterProps {
   text: string;
@@ -47,6 +48,14 @@ export function Typewriter({ text, className }: TypewriterProps) {
 }
 
 export default function Hero() {
+  const router = useRouter();
+
+  const handleExplore = (e: React.MouseEvent) => {
+    e.preventDefault();
+    router.push("/#projects");
+    document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section className="min-h-screen flex flex-col justify-center items-center text-center px-2">
       <div className="md:w-[65%]">
@@ -68,6 +77,7 @@ export default function Hero() {
         >
           <Link
             href="/#projects"
+            onClick={handleExplore}
             className="inline-block bg-foreground text-card text-base px-8 md:px-10 py-4 md:py-5 hover:scale-105 transition-transform duration-300"
           >
             Explore my work

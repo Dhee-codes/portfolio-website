@@ -55,7 +55,7 @@ export default function TechStack() {
         Tech Stack
       </motion.h2>
 
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(100px,1fr))] md:grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-6 md:gap-8 place-items-center">
+      <div className="grid grid-cols-2 md:grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-6 md:gap-8 place-items-center">
         {techs.map((tech, index) => (
           <motion.div
             key={tech.name}

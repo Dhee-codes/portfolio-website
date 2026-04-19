@@ -3,7 +3,7 @@
 import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import { Socials } from "./Socials";
+import { Socials } from "../ui/Socials";
 
 export default function Contact() {
   const formRef = useRef<HTMLFormElement>(null);
@@ -32,7 +32,10 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="px-8 md:px-12 lg:px-32 py-16 mb-20 md:mb-32">
+    <section
+      id="contact"
+      className="px-8 md:px-12 lg:px-32 py-16 mb-20 md:mb-32"
+    >
       <motion.h2
         className="text-sz-sect text-center mb-20"
         initial={{ opacity: 0, y: 30 }}
@@ -50,10 +53,10 @@ export default function Contact() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-2xl font-medium mb-6 text-[#9aa1c7]">
+          <h3 className="text-primary text-sz-subsect font-medium mb-6">
             Connect with me
           </h3>
-          <p className="text-lg tracking-wide mb-12">
+          <p className="text-sz-md tracking-wide mb-12">
             I&apos;m always open to new opportunities and collaborations. To
             discuss a project or simply network, please feel free to connect
             with me.
@@ -68,7 +71,7 @@ export default function Contact() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-2xl font-medium mb-6 text-[#9aa1c7]">
+          <h3 className="text-primary text-sz-subsect font-medium mb-6">
             Send me a message
           </h3>
           <form ref={formRef} onSubmit={handleSubmit}>
@@ -78,7 +81,7 @@ export default function Contact() {
               name="from_name"
               placeholder="Enter your name"
               required
-              className="block w-full bg-[#020a3a] text-[#c6c4cc] placeholder:text-[#d3d3d3] placeholder:italic placeholder:opacity-70 px-4 py-5 mb-8 focus:outline-[1px] focus:outline-[#c6c4cc]"
+              className="block w-full bg-primary/10 placeholder:italic placeholder:opacity-80 px-6 py-4 mb-8 focus:outline-2 focus:outline-primary-light"
             />
             <label className="block text-base mb-1">Email</label>
             <input
@@ -86,7 +89,7 @@ export default function Contact() {
               name="from_email"
               placeholder="Enter your email"
               required
-              className="block w-full bg-[#020a3a] text-[#c6c4cc] placeholder:text-[#d3d3d3] placeholder:italic placeholder:opacity-70 px-4 py-5 mb-8 focus:outline-[1px] focus:outline-[#c6c4cc]"
+              className="block w-full bg-primary/10 placeholder:italic placeholder:opacity-80 px-6 py-4 mb-8 focus:outline-2 focus:outline-primary-light"
             />
             <label className="block text-base mb-1">Message</label>
             <textarea
@@ -94,18 +97,17 @@ export default function Contact() {
               placeholder="Write your message here..."
               required
               rows={5}
-              className="block w-full bg-[#020a3a] text-[#c6c4cc] placeholder:text-[#d3d3d3] placeholder:italic placeholder:opacity-70 px-4 py-5 mb-8 focus:outline-[1px] focus:outline-[#c6c4cc] resize-none"
+              className="block w-full bg-primary/10 placeholder:italic placeholder:opacity-80 px-6 py-4 mb-8 focus:outline-2 focus:outline-primary-light"
             />
             <button
               type="submit"
               disabled={status === "sending"}
-              className="w-full text-white text-base py-5 cursor-pointer transition-transform duration-300 active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed"
-              style={{ background: "var(--btn-primary)" }}
+              className="w-full btn-gradient text-white text-base py-4 cursor-pointer transition-transform duration-300 active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed"
             >
               {status === "sending" ? "Sending..." : "Send message"}
             </button>
             {status === "success" && (
-              <p className="text-[#82edf9] text-sm mt-4">
+              <p className="text-primary text-sm mt-4">
                 Message sent successfully!
               </p>
             )}

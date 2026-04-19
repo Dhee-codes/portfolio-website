@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { getFeaturedProjects } from "@/lib/projects";
+import { ProjectCard } from "../ui/ProjectCard";
 
 const featured = getFeaturedProjects();
 
@@ -24,40 +24,13 @@ export default function Projects() {
         {featured.map((project, index) => (
           <motion.div
             key={project.slug}
-            className="bg-primary-grey overflow-hidden hover:el-shadow transition-all duration-300 hover:scale-105"
+            className="bg-primary/10 overflow-hidden hover:el-shadow transition-all duration-300 hover:scale-105"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: index * 0.1 }}
             viewport={{ once: true }}
           >
-            <Link href={`/projects/${project.slug}`}>
-              <div className="relative w-full aspect-video">
-                <Image
-                  src={project.coverImage}
-                  alt={project.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl mb-3 text-text-muted">
-                  {project.title}
-                </h3>
-                <p className="text-sm text-text-muted mb-4">
-                  {project.shortDescription}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {project.techStack.map((tech) => (
-                    <span
-                      key={tech}
-                      className="text-xs px-3 py-1 bg-primary-shade text-accent font-semibold"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </Link>
+            <ProjectCard project={project} />
           </motion.div>
         ))}
       </div>
