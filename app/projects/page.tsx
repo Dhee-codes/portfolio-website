@@ -13,12 +13,7 @@ export default function ProjectsPage() {
 
       <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
         {projects.map((project) => (
-          <div
-            key={project.slug}
-            className="bg-primary/10 overflow-hidden hover:el-shadow transition-all duration-300 hover:scale-105"
-          >
-            <ProjectCard project={project} />
-          </div>
+          <ProjectCard project={project} key={project.slug} />
         ))}
       </div>
     </main>

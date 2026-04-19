@@ -3,9 +3,14 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
-import { navLinks, type Navlink } from "@/lib/navlinks";
 import { Logo } from "../Logo";
 import { useRouter } from "next/navigation";
+
+export const navLinks = [
+  { label: "Home", href: "/" },
+  { label: "Projects", href: "/projects" },
+  { label: "Contact", href: "/#contact" },
+];
 
 const linkClass =
   "text-foreground hover:text-primary transition-colors duration-300 font-medium px-3 py-2";
@@ -30,7 +35,7 @@ export default function Navbar() {
           </Link>
 
           <ul className="hidden md:flex gap-6 list-none">
-            {navLinks.map((link: Navlink) => (
+            {navLinks.map((link) => (
               <li key={link.href}>
                 {link.label === "Home" ? (
                   <Link
