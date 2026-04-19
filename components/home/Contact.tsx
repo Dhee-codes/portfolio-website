@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { Socials } from "../ui/Socials";
 
@@ -11,7 +11,7 @@ export default function Contact() {
     "idle" | "sending" | "success" | "error"
   >("idle");
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     if (!formRef.current) return;
 
@@ -36,23 +36,12 @@ export default function Contact() {
       id="contact"
       className="px-8 md:px-12 lg:px-32 py-16 mb-20 md:mb-32"
     >
-      <motion.h2
-        className="text-sz-sect text-center mb-20"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
+      <h2 className="text-sz-sect text-center mb-20">
         Contact
-      </motion.h2>
+      </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
+        <div>
           <h3 className="text-primary text-sz-subsect font-medium mb-6">
             Connect with me
           </h3>
@@ -63,14 +52,9 @@ export default function Contact() {
           </p>
 
           <Socials />
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
+        <div>
           <h3 className="text-primary text-sz-subsect font-medium mb-6">
             Send me a message
           </h3>
@@ -117,7 +101,7 @@ export default function Contact() {
               </p>
             )}
           </form>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

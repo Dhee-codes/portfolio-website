@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 
 const techs = [
   {
@@ -44,27 +44,16 @@ const techs = [
 
 export default function TechStack() {
   return (
-    <section id="tech-stack" className="px-8 md:px-12 lg:px-32 py-16 mb-20 md:mb-32">
-      <motion.h2
-        className="text-sz-sect text-center mb-20"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
+    <section id="tech-stack" className="px-8 md:px-12 lg:px-32 py-16 mb-16">
+      <h2 className="text-sz-sect text-center mb-20">
         Tech Stack
-      </motion.h2>
+      </h2>
 
       <div className="grid grid-cols-2 md:grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-6 md:gap-8 place-items-center">
-        {techs.map((tech, index) => (
-          <motion.div
+        {techs.map((tech) => (
+          <div
             key={tech.name}
             className="flex flex-col items-center gap-3 p-6 w-full bg-card rounded-sm transition-all duration-300 hover:el-shadow"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: index * 0.1 }}
-            viewport={{ once: true }}
-            whileHover={{ scale: 1.1 }}
           >
             <Image
               src={tech.icon}
@@ -73,7 +62,7 @@ export default function TechStack() {
               height={60}
             />
             <span className="text-sm text-text-muted">{tech.name}</span>
-          </motion.div>
+          </div>
         ))}
       </div>
     </section>

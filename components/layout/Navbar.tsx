@@ -3,10 +3,9 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 import { navLinks, type Navlink } from "@/lib/navlinks";
+import { Logo } from "../Logo";
 import { useRouter } from "next/navigation";
-import ThemeToggle from "../ui/ThemeToggle";
 
 const linkClass =
   "text-foreground hover:text-primary transition-colors duration-300 font-medium px-3 py-2";
@@ -26,25 +25,19 @@ export default function Navbar() {
     <>
       <header className="fixed top-0 left-0 w-full z-50 shadow-md backdrop-blur-md bg-card/70">
         <nav className="flex justify-between items-center px-6 md:px-16 py-4 md:py-6">
-          <Link
-            href="/"
-            onClick={handleHomeClick}
-            className="relative w-38 md:w-45 h-10"
-          >
-            <Image
-              src="/images/logo/DheeCodes-light.svg"
-              alt="DheeCodes logo"
-              fill
-              priority
-              className="object-contain"
-            />
+          <Link href="/" onClick={handleHomeClick}>
+            <Logo className="w-38 md:w-45 h-auto" />
           </Link>
 
           <ul className="hidden md:flex gap-6 list-none">
             {navLinks.map((link: Navlink) => (
               <li key={link.href}>
                 {link.label === "Home" ? (
-                  <Link href="/" onClick={handleHomeClick} className={linkClass}>
+                  <Link
+                    href="/"
+                    onClick={handleHomeClick}
+                    className={linkClass}
+                  >
                     {link.label}
                   </Link>
                 ) : (
@@ -55,8 +48,6 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-
-          <ThemeToggle />
 
           {/* Hamburger button — visible on mobile only */}
           <button
