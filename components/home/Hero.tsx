@@ -12,11 +12,17 @@ interface TypewriterProps {
 export function Typewriter({ text, className }: TypewriterProps) {
   const words = text.split(" ");
 
+  const hasVisited =
+    typeof window !== "undefined" && sessionStorage.getItem("home-visited");
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.03 },
+      transition: {
+        staggerChildren: 0.03,
+        delayChildren: hasVisited ? 1 : 1.3,
+      },
     },
   };
 
@@ -29,7 +35,7 @@ export function Typewriter({ text, className }: TypewriterProps) {
     <motion.div
       className={`flex flex-wrap text-sz-md justify-center font-medium mb-18 tracking-normal ${className}`}
       variants={containerVariants}
-      initial="hidden"
+      initial={hasVisited ? false : "hidden"}
       whileInView="visible"
       viewport={{ once: true }}
     >
@@ -50,6 +56,9 @@ export function Typewriter({ text, className }: TypewriterProps) {
 export default function Hero() {
   const router = useRouter();
 
+  const hasVisited =
+    typeof window !== "undefined" && sessionStorage.getItem("home-visited");
+
   const handleExplore = (e: React.MouseEvent) => {
     e.preventDefault();
     router.push("/#projects");
@@ -61,9 +70,9 @@ export default function Hero() {
       <div className="md:w-[65%]">
         <motion.h1
           className="text-sz-xl mb-6 leading-tight"
-          initial={{ opacity: 0, y: 50 }}
+          initial={hasVisited ? false : { opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.3 }}
+          transition={{ duration: 1, delay: hasVisited ? 0 : 0.3 }}
         >
           Crafting seamless experiences for{" "}
           <span className="gradient-highlight">the digital world</span>
@@ -71,14 +80,14 @@ export default function Hero() {
         <Typewriter text="I'm Divine Obiorah, a Frontend Developer building clean, responsive and interactive web experiences." />
 
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={hasVisited ? false : { opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 3.5 }}
+          transition={{ duration: 0.5, delay: hasVisited ? 0 : 4.5 }}
         >
           <Link
             href="/#projects"
             onClick={handleExplore}
-            className="inline-block bg-foreground text-card text-base px-8 md:px-10 py-4 md:py-5 hover:scale-105 transition-transform duration-300"
+            className="inline-block bg-foreground text-card text-base font-bold px-8 md:px-10 py-4 md:py-5 hover:scale-105 transition-transform duration-300"
           >
             Explore my work
           </Link>

@@ -102,7 +102,7 @@ export default function Contact() {
             <button
               type="submit"
               disabled={status === "sending"}
-              className="w-full btn-gradient text-white text-base py-4 cursor-pointer transition-transform duration-300 active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed"
+              className="w-full btn-gradient text-white text-base font-semibold py-4 cursor-pointer transition-transform duration-300 active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed"
             >
               {status === "sending" ? "Sending..." : "Send message"}
             </button>
@@ -112,7 +112,7 @@ export default function Contact() {
               </p>
             )}
             {status === "error" && (
-              <p className="text-red-400 text-sm mt-4">
+              <p className="text-red-500 text-sm mt-4">
                 Something went wrong. Please try again.
               </p>
             )}

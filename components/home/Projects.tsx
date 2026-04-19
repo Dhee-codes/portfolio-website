@@ -38,7 +38,7 @@ export default function Projects() {
       <div className="flex justify-center">
         <Link
           href="/projects"
-          className="max-sm:w-full text-card text-base text-center px-8 py-4 bg-foreground hover:scale-105 transition-transform duration-300"
+          className="max-sm:w-full text-card text-base font-semibold text-center px-8 py-4 bg-foreground hover:scale-105 transition-transform duration-300"
         >
           View all projects
         </Link>
