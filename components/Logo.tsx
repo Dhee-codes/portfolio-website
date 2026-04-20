@@ -9,8 +9,16 @@ export const Logo = ({ className = "" }) => {
         width={395}
         height={67}
         priority
-        className={`object-contain ${className}`}
+        className={`object-contain ${className} dark:hidden`}
+      />
+      <Image
+        src="/images/logo/DheeCodes-dark.svg"
+        alt="DheeCodes logo"
+        width={395}
+        height={67}
+        priority
+        className={`object-contain ${className} hidden dark:block`}
       />
     </>
   );
-}
+};

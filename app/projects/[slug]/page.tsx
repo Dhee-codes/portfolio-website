@@ -28,7 +28,7 @@ interface LinkBtnProps {
   className?: string;
 }
 
-const LinkBtn = ({ label, href, className = "" }: LinkBtnProps ) => {
+const LinkBtn = ({ label, href, className = "" }: LinkBtnProps) => {
   return (
     <a
       href={href}

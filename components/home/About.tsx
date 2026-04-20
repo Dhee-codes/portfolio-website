@@ -13,7 +13,7 @@ export default function About() {
     router.push("/#projects");
     document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
   };
-  
+
   return (
     <section
       id="about"

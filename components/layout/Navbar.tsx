@@ -54,17 +54,19 @@ export default function Navbar() {
             ))}
           </ul>
 
-          {/* Hamburger button — visible on mobile only */}
-          <button
-            className="md:hidden p-2"
-            onClick={() => setIsOpen(true)}
-            aria-expanded={isOpen}
-            aria-controls="mobile-menu"
-            aria-label="Open menu"
-          >
-            {/* hamburger lines */}
-            <Menu className="size-6 hover:text-primary transition-colors" />
-          </button>
+          <div>
+            {/* <ThemeToggle /> */}
+
+            <button
+              className="md:hidden p-2"
+              onClick={() => setIsOpen(true)}
+              aria-expanded={isOpen}
+              aria-controls="mobile-menu"
+              aria-label="Open menu"
+            >
+              <Menu className="size-6 hover:text-primary transition-colors" />
+            </button>
+          </div>
         </nav>
       </header>
 
@@ -107,8 +109,11 @@ export default function Navbar() {
                 {link.label === "Home" ? (
                   <Link
                     href="/"
-                    onClick={(e) => {setIsOpen(false); handleHomeClick(e);}}
-                    className={linkClass}
+                    onClick={(e) => {
+                      setIsOpen(false);
+                      handleHomeClick(e);
+                    }}
+                    className={`${linkClass} text-[1.25rem]`}
                   >
                     {link.label}
                   </Link>

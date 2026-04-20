@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Special_Gothic_Expanded_One, Inter } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "next-themes";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
@@ -32,9 +33,11 @@ export default function RootLayout({
       className={`${gothic.variable} ${inter.variable} antialiased`}
     >
       <body className="min-h-screen flex flex-col">
+        <ThemeProvider attribute="class" enableSystem>
           <Navbar />
           {children}
           <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

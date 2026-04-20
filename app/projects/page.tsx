@@ -11,10 +11,7 @@ export const metadata = {
 export default function Projects() {
   return (
     <main className="px-8 md:px-12 lg:px-32 py-30 md:py-40">
-      <Link
-        href="/"
-        className="text-lg mb-10 inline-block hover:underline"
-      >
+      <Link href="/" className="text-lg mb-10 inline-block hover:underline">
         <span className="flex justify-center items-center gap-4">
           <ChevronLeft /> Back to home
         </span>

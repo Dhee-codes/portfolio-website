@@ -22,7 +22,8 @@ export default function Hero() {
         </h1>
 
         <p className="flex flex-wrap text-sz-md justify-center font-medium mb-16 tracking-normal">
-          I&apos;m Divine Obiorah, a Frontend Developer building clean, responsive and interactive web experiences.
+          I&apos;m Divine Obiorah, a Frontend Developer building clean,
+          responsive and interactive web experiences.
         </p>
 
         <div>
