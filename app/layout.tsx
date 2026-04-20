@@ -33,7 +33,7 @@ export default function RootLayout({
       className={`${gothic.variable} ${inter.variable} antialiased`}
     >
       <body className="min-h-screen flex flex-col">
-        <ThemeProvider attribute="class" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem={true}>
           <Navbar />
           {children}
           <Footer />

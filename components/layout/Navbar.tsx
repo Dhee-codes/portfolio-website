@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { Logo } from "../Logo";
 import { useRouter } from "next/navigation";
+import { ModeToggle } from "../ui/ModeToggle";
 
 export const navLinks = [
   { label: "Home", href: "/" },
@@ -54,8 +55,8 @@ export default function Navbar() {
             ))}
           </ul>
 
-          <div>
-            {/* <ThemeToggle /> */}
+          <div className="flex justify-center items-center gap-4">
+            <ModeToggle />
 
             <button
               className="md:hidden p-2"
