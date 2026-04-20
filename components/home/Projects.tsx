@@ -9,10 +9,10 @@ const featured = getFeaturedProjects();
 
 export default function Projects() {
   return (
-    <section id="projects" className="px-8 md:px-32 py-16 mb-16">
+    <section id="projects" className="px-8 md:px-12 lg:px-32 py-16 mb-16">
       <h2 className="text-sz-sect text-center mb-20">Projects</h2>
 
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8 mb-16">
+      <div className="grid grid-cols-1 md:grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-x-8 gap-y-16 mb-16">
         {featured.map((project) => (
           <ProjectCard project={project} key={project.slug} />
         ))}

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ChevronLeft, ArrowUpRight } from "lucide-react";
 import { getProjectBySlug, projects } from "@/lib/projects";
 import { notFound } from "next/navigation";
 
@@ -7,8 +8,13 @@ export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const project = getProjectBySlug(params.slug);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
   if (!project) return {};
   return {
     title: `${project.title} | DheeLabs`,
@@ -16,24 +22,45 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   };
 }
 
-export default function ProjectDetailPage({
+interface LinkBtnProps {
+  label: string;
+  href: string;
+  className?: string;
+}
+
+const LinkBtn = ({ label, href, className = "" }: LinkBtnProps ) => {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`flex justify-between items-center text-card text-sm font-semibold px-6 py-3 text-center hover:scale-105 transition-transform duration-300 ${className}`}
+    >
+      {label} <ArrowUpRight className="size-4" />
+    </a>
+  );
+};
+
+export default async function ProjectDetails({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const project = getProjectBySlug(params.slug);
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
   if (!project) notFound();
 
   return (
-    <main className="px-32 py-40">
+    <main className="px-8 md:px-12 lg:px-32 py-30 md:py-40">
       <Link
         href="/projects"
-        className="text-[#82edf9] text-sm mb-12 inline-block hover:underline"
+        className="text-lg mb-10 inline-block hover:underline"
       >
-        ← Back to projects
+        <span className="flex justify-center items-center gap-4">
+          <ChevronLeft /> Back to projects
+        </span>
       </Link>
-
-      <div className="relative w-full h-96 mb-12">
+      <div className="relative w-full aspect-video mb-12">
         <Image
           src={project.coverImage}
           alt={project.title}
@@ -41,53 +68,42 @@ export default function ProjectDetailPage({
           className="object-cover"
         />
       </div>
-
-      <div className="grid grid-cols-3 gap-16">
-        <div className="col-span-2">
-          <h1 className="text-5xl font-normal mb-6">{project.title}</h1>
-          <p className="text-lg text-[#c6c4cc] mb-12">{project.fullDescription}</p>
-
-          <h3 className="text-2xl text-[#9aa1c7] mb-4">My Role</h3>
-          <p className="text-lg text-[#c6c4cc] mb-12">{project.role}</p>
-
-          <h3 className="text-2xl text-[#9aa1c7] mb-4">Challenges</h3>
-          <p className="text-lg text-[#c6c4cc] mb-12">{project.challenges}</p>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16">
+        <div className="md:col-span-2">
+          <h1 className="text-sz-lg mb-6">{project.title}</h1>
+          <p className="text-sz-md mb-12">{project.fullDescription}</p>
+          <h3 className="text-sz-subsect mb-4">My Role</h3>
+          <p className="text-sz-md mb-12">{project.role}</p>
+          <h3 className="text-sz-subsect mb-4">Challenges</h3>
+          <p className="text-sz-md mb-12">{project.challenges}</p>
         </div>
-
         <div>
-          <h3 className="text-2xl text-[#9aa1c7] mb-6">Tech Stack</h3>
+          <h3 className="text-sz-subsect mb-6">Tech Stack</h3>
           <div className="flex flex-wrap gap-2 mb-12">
             {project.techStack.map((tech) => (
               <span
                 key={tech}
-                className="text-xs px-3 py-1 bg-[#020a3a] text-[#82edf9]"
+                className="text-xs px-3 py-1 bg-primary-shade text-accent font-semibold"
               >
                 {tech}
               </span>
             ))}
           </div>
-
-          <h3 className="text-2xl text-[#9aa1c7] mb-6">Links</h3>
+          <h3 className="text-sz-subsect mb-6">Links</h3>
           <div className="flex flex-col gap-4">
             {project.liveUrl && (
-              <a
+              <LinkBtn
                 href={project.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white text-sm px-6 py-3 text-center bg-btn-bg shadow-[0_0_8px_#e889e5] hover:scale-105 transition-transform duration-300"
-              >
-                Live Site →
-              </a>
+                label="Live Site"
+                className="bg-primary"
+              />
             )}
             {project.githubUrl && (
-              <a
+              <LinkBtn
                 href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white text-sm px-6 py-3 text-center bg-[#020a3a] hover:scale-105 transition-transform duration-300"
-              >
-                GitHub →
-              </a>
+                label="GitHub"
+                className="bg-foreground"
+              />
             )}
           </div>
         </div>

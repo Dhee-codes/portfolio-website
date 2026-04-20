@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="flex flex-col md:flex-row md:justify-between items-center gap-6 bg-primary/10 px-6 lg:px-32 py-6">
       <Logo className="w-45 h-auto" />
 
-      <Socials className="scale-70" />
+      <Socials className="scale-68" />
 
       <p className="text-base">&copy; DheeCodes. All rights reserved.</p>
     </footer>

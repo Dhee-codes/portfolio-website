@@ -63,7 +63,7 @@ export default function Navbar() {
             aria-label="Open menu"
           >
             {/* hamburger lines */}
-            <Menu className="size-8 hover:text-primary transition-colors" />
+            <Menu className="size-6 hover:text-primary transition-colors" />
           </button>
         </nav>
       </header>
@@ -98,19 +98,29 @@ export default function Navbar() {
             className="self-end"
             aria-label="Close menu"
           >
-            <X className="size-10 hover:text-primary transition-colors" />
+            <X className="size-8 hover:text-primary transition-colors" />
           </button>
 
           <ul className="flex flex-col gap-12 pl-8 pt-12">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className={`${linkClass} text-[1.5rem]`}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.label}
-                </Link>
+                {link.label === "Home" ? (
+                  <Link
+                    href="/"
+                    onClick={(e) => {setIsOpen(false); handleHomeClick(e);}}
+                    className={linkClass}
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <Link
+                    href={link.href}
+                    className={`${linkClass} text-[1.25rem]`}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>

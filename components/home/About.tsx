@@ -37,14 +37,14 @@ export default function About() {
           <Link
             href="#projects"
             onClick={handleExplore}
-            className="text-white text-base font-semibold px-8 py-4 bg-primary/80 hover:scale-105 transition-transform duration-300"
+            className="text-card text-base font-semibold px-12 py-4 bg-primary hover:scale-105 transition-transform duration-300"
           >
             View my projects
           </Link>
           <Link
             href="/docs/Divine_E._Obiorah.pdf"
             download
-            className="text-card bg-foreground text-base font-semibold px-8 py-4 hover:scale-105 active:scale-98 transition-transform duration-300"
+            className="text-card bg-foreground text-base font-semibold px-12 py-4 hover:scale-105 active:scale-98 transition-transform duration-300"
           >
             Download Resume
           </Link>
