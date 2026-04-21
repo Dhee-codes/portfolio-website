@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-
+import { StackList } from "./StackList";
 interface Project {
   slug: string;
   coverImage: string;
@@ -13,13 +13,14 @@ export const ProjectCard = ({ project }: { project: Project }) => {
   return (
     <Link
       href={`/projects/${project.slug}`}
-      className="flex flex-col h-full bg-primary/10 overflow-hidden hover:el-shadow transition-all duration-300 group"
+      className="flex flex-col h-full bg-primary/10 overflow-hidden shadow-lg hover:el-shadow transition-all duration-300 group"
     >
       <div className="relative w-full aspect-video">
         <Image
           src={project.coverImage}
           alt={project.title}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover group-hover:scale-105 transition-all duration-500"
         />
       </div>
@@ -28,16 +29,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
         <p className="text-sm text-text-muted mb-4">
           {project.shortDescription}
         </p>
-        <div className="flex flex-wrap mt-auto gap-2">
-          {project.techStack.map((tech) => (
-            <span
-              key={tech}
-              className="text-xs px-3 py-1 bg-primary-shade text-accent font-semibold"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
+        <StackList stack={project.techStack} />
       </div>
     </Link>
   );

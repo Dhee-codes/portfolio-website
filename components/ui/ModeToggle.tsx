@@ -19,22 +19,22 @@ export function ModeToggle() {
 
   if (!mounted) {
     return (
-      <div className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700"></div>
+      <div className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700"></div>
     );
   }
 
   const currentIcon =
     resolvedTheme === "dark" ? (
-      <Sun size={24} className="text-yellow-500" />
+      <Sun size={24} />
     ) : (
-      <Moon size={24} strokeWidth={2} className="text-gray-700" />
+      <Moon size={24} strokeWidth={2} />
     );
 
 
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded-lg focus:border focus:border-primary transition-colors"
+      className="p-1 rounded-lg focus:border focus:border-primary"
       aria-label={
         resolvedTheme === "dark"
           ? "Switch to light theme"

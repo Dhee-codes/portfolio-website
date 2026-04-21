@@ -55,7 +55,7 @@ export default function Navbar() {
             ))}
           </ul>
 
-          <div className="flex justify-center items-center gap-4">
+          <div className="flex justify-center items-center gap-2">
             <ModeToggle />
 
             <button
@@ -65,7 +65,7 @@ export default function Navbar() {
               aria-controls="mobile-menu"
               aria-label="Open menu"
             >
-              <Menu className="size-6 hover:text-primary transition-colors" />
+              <Menu className="size-8 p-1 rounded-lg hover:border hover:border-primary hover:text-primary transition-colors" />
             </button>
           </div>
         </nav>
@@ -101,7 +101,7 @@ export default function Navbar() {
             className="self-end"
             aria-label="Close menu"
           >
-            <X className="size-8 hover:text-primary transition-colors" />
+            <X className="size-8 p-1 rounded-lg hover:border hover:border-primary hover:text-primary transition-colors" />
           </button>
 
           <ul className="flex flex-col gap-12 pl-8 pt-12">

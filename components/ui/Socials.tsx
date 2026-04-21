@@ -33,7 +33,7 @@ export const Socials = ({ size = 32, className = "" }) => {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className={`text-[#c6c4cc] dark:text-gray-400 ${link.hoverColor} transition-colors duration-300`}
+              className={`text-text-muted/60 ${link.hoverColor} transition-colors duration-300`}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -22,6 +22,7 @@
   --color-primary: var(--primary);
   --color-primary-light: var(--primary-light);
   --color-primary-shade: var(--primary-shade);
+  --color-primary-off: var(--primary-off);
   --color-accent: var(--accent);
   --color-card: var(--card);
   --color-text-muted: var(--text-muted);
@@ -38,7 +39,8 @@
   --foreground: #f2f4fe;
   --primary: #818cf8;
   --primary-light: #b3bafb;
-  --primary-shade: #06002d;
+  --primary-shade: oklch(0.9 0.12 276.789);
+  --primary-off: #4f46e5;
   --card: #000000;
   --text-muted: #a9abb2;
 }
