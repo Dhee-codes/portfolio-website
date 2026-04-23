@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ChevronLeft, ArrowUpRight } from "lucide-react";
 import { getProjectBySlug, projects } from "@/lib/projects";
 import { notFound } from "next/navigation";
+import { StackList } from "@/components/ui/StackList";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -80,15 +81,8 @@ export default async function ProjectDetails({
         </div>
         <div>
           <h3 className="text-sz-subsect mb-6">Tech Stack</h3>
-          <div className="flex flex-wrap gap-2 mb-12">
-            {project.techStack.map((tech) => (
-              <span
-                key={tech}
-                className="text-xs px-3 py-1 bg-primary-shade text-accent font-semibold"
-              >
-                {tech}
-              </span>
-            ))}
+          <div className="mb-12">
+            <StackList stack={project.techStack} />
           </div>
           <h3 className="text-sz-subsect mb-6">Links</h3>
           <div className="flex flex-col gap-4">
