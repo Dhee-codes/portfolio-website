@@ -31,7 +31,7 @@ export default function About() {
           passion for building clean, responsive and interactive web
           experiences. I recently completed an internship where I built and
           shipped real products using React, Next.js, TypeScript, and Tailwind
-          CSS... and I&pos;m just getting started.
+          CSS. and I&apos;m just getting started.
         </p>
         <div className="flex flex-col lg:flex-row text-center gap-6">
           <Link

@@ -30,7 +30,7 @@ export default function Hero() {
           <Link
             href="/#projects"
             onClick={handleExplore}
-            className="inline-block bg-foreground text-card text-base font-bold px-8 md:px-10 py-4 md:py-5 hover:scale-105 transition-transform duration-300"
+            className="inline-block bg-foreground text-card text-base font-bold px-8 md:px-10 py-4 md:py-5 focus:ring-accent hover:scale-105 transition-transform duration-300"
           >
             Explore my work
           </Link>

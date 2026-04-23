@@ -34,7 +34,7 @@ export function ModeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="p-1 rounded-lg focus:border focus:border-primary"
+      className="p-1 rounded-lg hover:border hover:border-primary transition-all duration-300"
       aria-label={
         resolvedTheme === "dark"
           ? "Switch to light theme"

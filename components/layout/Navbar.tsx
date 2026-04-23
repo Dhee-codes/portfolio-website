@@ -55,11 +55,11 @@ export default function Navbar() {
             ))}
           </ul>
 
-          <div className="flex justify-center items-center gap-2">
+          <div className="flex justify-center items-center max-sm:gap-4">
             <ModeToggle />
 
             <button
-              className="md:hidden p-2"
+              className="md:hidden"
               onClick={() => setIsOpen(true)}
               aria-expanded={isOpen}
               aria-controls="mobile-menu"
@@ -74,6 +74,7 @@ export default function Navbar() {
       <div
         id="mobile-menu"
         role="dialog"
+        inert={isOpen ? undefined : true}
         aria-modal="true"
         aria-label="Mobile navigation"
         className={`fixed inset-0 z-100 md:hidden transition-opacity duration-300 ${
