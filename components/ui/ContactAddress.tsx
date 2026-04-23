@@ -17,7 +17,7 @@ const address = [
 
 export const ContactAddress = () => {
   return (
-    <div className="flex flex-col gap-4 mb-10">
+    <div className="flex flex-wrap gap-y-4 gap-x-16 mb-10">
       {address.map((a) => (
         <a
           key={a.href}

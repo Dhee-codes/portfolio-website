@@ -58,7 +58,7 @@ export default function Contact() {
 
         <div>
           <h3 className="text-primary text-sz-subsect font-medium mb-6">
-            Send me a4 message
+            Send me a message
           </h3>
           <form ref={formRef} onSubmit={handleSubmit}>
             <label className="block text-base mb-1">Name</label>
@@ -93,7 +93,7 @@ export default function Contact() {
               {status === "sending" ? "Sending..." : "Send message"}
             </button>
             {status === "success" && (
-              <p className="text-primary text-sm mt-4">
+              <p className="text-green-600 text-sm mt-4">
                 Message sent successfully!
               </p>
             )}
