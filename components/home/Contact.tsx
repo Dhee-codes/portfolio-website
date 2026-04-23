@@ -4,6 +4,7 @@ import { useState, useRef } from "react";
 // import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { Socials } from "../ui/Socials";
+import { ContactAddress } from "../ui/ContactAddress";
 
 export default function Contact() {
   const formRef = useRef<HTMLFormElement>(null);
@@ -26,7 +27,8 @@ export default function Contact() {
       );
       setStatus("success");
       formRef.current.reset();
-    } catch {
+    } catch (err) {
+      console.error("EmailJS error:", err);
       setStatus("error");
     }
   };
@@ -43,18 +45,20 @@ export default function Contact() {
           <h3 className="text-primary text-sz-subsect font-medium mb-6">
             Connect with me
           </h3>
-          <p className="text-sz-md tracking-wide mb-12">
+          <p className="text-sz-md tracking-wide mb-6">
             I&apos;m always open to new opportunities and collaborations. To
             discuss a project or simply network, please feel free to connect
             with me.
           </p>
+          
+          <ContactAddress />
 
           <Socials />
         </div>
 
         <div>
           <h3 className="text-primary text-sz-subsect font-medium mb-6">
-            Send me a message
+            Send me a4 message
           </h3>
           <form ref={formRef} onSubmit={handleSubmit}>
             <label className="block text-base mb-1">Name</label>
