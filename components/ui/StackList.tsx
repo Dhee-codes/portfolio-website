@@ -8,7 +8,7 @@ export const StackList = ({ stack }: StackListProps ) => {
       {stack.map((tech) => (
         <span
           key={tech}
-          className="text-xs px-3 py-1 bg-primary-shade text-accent dark:text-primary-off font-semibold"
+          className="text-xs px-3 py-1 bg-primary-shade text-accent dark:text-primary-off font-semibold rounded-md"
         >
           {tech}
         </span>

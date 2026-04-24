@@ -1,9 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-// import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
+import { LinkBtn, DownloadBtn } from "../ui/Button";
 
 export default function About() {
   const router = useRouter();
@@ -34,24 +33,21 @@ export default function About() {
           CSS. and I&apos;m just getting started.
         </p>
         <div className="flex flex-col lg:flex-row text-center gap-6">
-          <Link
+          <LinkBtn
             href="#projects"
             onClick={handleExplore}
-            className="text-card text-base font-semibold text-nowrap px-12 py-4 bg-primary hover:scale-105 transition-transform duration-300"
-          >
-            View my projects
-          </Link>
-          <Link
+            label="View my projects"
+            className="bg-primary"
+          />
+          <DownloadBtn
             href="/docs/Divine_E._Obiorah.pdf"
-            download
-            className="text-card bg-foreground text-base text-nowrap font-semibold px-12 py-4 hover:scale-105 active:scale-98 transition-transform duration-300"
-          >
-            Download Resume
-          </Link>
+            label="Download Resume"
+            className="bg-foreground"
+          />
         </div>
       </div>
 
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center order-first md:order-0">
         <Image
           src="/images/profile.png"
           alt="Divine Obiorah"

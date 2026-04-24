@@ -9,7 +9,7 @@ import { ModeToggle } from "../ui/ModeToggle";
 
 export const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Projects", href: "/projects" },
+  { label: "Projects", href: "/#projects" },
   { label: "Contact", href: "/#contact" },
 ];
 
@@ -29,10 +29,10 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 w-full z-50 shadow-md backdrop-blur-md bg-card/70">
+      <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-card/60">
         <nav className="flex justify-between items-center px-6 md:px-16 py-4 md:py-6">
           <Link href="/" onClick={handleHomeClick}>
-            <Logo className="w-38 md:w-45 h-auto" />
+            <Logo className="w-32 md:w-45 h-auto" />
           </Link>
 
           <ul className="hidden md:flex gap-6 list-none">

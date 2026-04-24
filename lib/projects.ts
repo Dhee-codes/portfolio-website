@@ -1,4 +1,4 @@
-export type Project = {
+export interface Project {
   slug: string;
   title: string;
   shortDescription: string;
@@ -6,11 +6,12 @@ export type Project = {
   role: string;
   challenges: string;
   techStack: string[];
-  liveUrl: string;
+  myUrl: string;
+  officialUrl?: string;
   githubUrl?: string;
-  featured: boolean;
+  demoVideo?: string;
   coverImage: string;
-  images: string[];
+  featured: boolean;
 };
 
 export const projects: Project[] = [
@@ -25,11 +26,10 @@ export const projects: Project[] = [
     challenges:
       "Implementing derived virtual menu categories that don't exist in the data but are computed dynamically from it, required thinking carefully about data transformation and rendering logic.",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
-    liveUrl: "https://chuks-kitchen-gamma.vercel.app/",
+    myUrl: "https://chuks-kitchen-gamma.vercel.app/",
     githubUrl: "https://github.com/Dhee-codes/chuks-kitchen",
     featured: true,
     coverImage: "/images/projects/chuks-kitchen.png",
-    images: [],
   },
   {
     slug: "nerstagric",
@@ -42,10 +42,10 @@ export const projects: Project[] = [
     challenges:
       "Setting up a blog routing system designed to connect to a CMS that was never provisioned during the internship, requiring me to structure the code in a way that would make future integration straightforward.",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
-    liveUrl: "https://nerstagric.vercel.app/",
+    myUrl: "https://nerstagric.vercel.app/",
+    officialUrl: "https://nerstagric.com/",
     featured: true,
     coverImage: "/images/projects/nerstagric.png",
-    images: [],
   },
   {
     slug: "spryone",
@@ -58,15 +58,14 @@ export const projects: Project[] = [
     challenges:
       "Translating a design-heavy layout with multiple breakpoints into clean, maintainable code while maintaining pixel accuracy across screen sizes.",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
-    liveUrl: "https://spryone.vercel.app/",
+    myUrl: "https://spryone.vercel.app/",
     featured: true,
     coverImage: "/images/projects/spryone.png",
-    images: [],
   },
 ];
 
 export function getFeaturedProjects() {
-  return projects.filter((p) => p.featured).slice(0, 4);
+  return projects.filter((p) => p.featured).slice(0, 6);
 }
 
 export function getProjectBySlug(slug: string) {

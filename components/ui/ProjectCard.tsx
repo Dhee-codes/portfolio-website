@@ -13,7 +13,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
   return (
     <Link
       href={`/projects/${project.slug}`}
-      className="flex flex-col h-full bg-primary/10 overflow-hidden shadow-lg hover:el-shadow transition-all duration-300 group"
+      className="flex flex-col h-full bg-primary/10 overflow-hidden rounded-xl shadow-lg hover:el-shadow transition-all duration-300 group"
     >
       <div className="relative w-full aspect-video">
         <Image
@@ -24,7 +24,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
           className="object-cover group-hover:scale-105 transition-all duration-500"
         />
       </div>
-      <div className="flex flex-col flex-1 p-6">
+      <div className="flex flex-col flex-1 p-3">
         <h3 className="text-xl mb-3 text-text-muted">{project.title}</h3>
         <p className="text-sm text-text-muted mb-4">
           {project.shortDescription}

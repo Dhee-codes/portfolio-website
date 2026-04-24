@@ -1,10 +1,12 @@
 "use client";
 
 import { useState, useRef } from "react";
-// import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import { SectionShell } from "./SectionShell";
 import { Socials } from "../ui/Socials";
+import { InputField, MessageField } from "../ui/ContactField";
 import { ContactAddress } from "../ui/ContactAddress";
+import { Send } from "lucide-react";
 
 export default function Contact() {
   const formRef = useRef<HTMLFormElement>(null);
@@ -34,13 +36,11 @@ export default function Contact() {
   };
 
   return (
-    <section
-      id="contact"
-      className="px-8 md:px-12 lg:px-32 py-16 mb-20 md:mb-32"
-    >
-      <h2 className="text-sz-sect text-center mb-20">Contact</h2>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+    <SectionShell id="contact" header="Contact">
+      <div
+        id="contact"
+        className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-28"
+      >
         <div>
           <h3 className="text-primary text-sz-subsect font-medium mb-6">
             Connect with me
@@ -50,7 +50,7 @@ export default function Contact() {
             discuss a project or simply network, please feel free to connect
             with me.
           </p>
-          
+
           <ContactAddress />
 
           <Socials />
@@ -61,36 +61,30 @@ export default function Contact() {
             Send me a message
           </h3>
           <form ref={formRef} onSubmit={handleSubmit}>
-            <label className="block text-base mb-1">Name</label>
-            <input
-              type="text"
-              name="from_name"
-              placeholder="Enter your name"
-              required
-              className="block w-full bg-primary/10 placeholder:italic placeholder:opacity-80 px-6 py-4 mb-8 focus:outline-2 focus:outline-primary-light"
+            <InputField
+              label={"Name"}
+              type={"text"}
+              name={"from_name"}
+              placeholder={"Enter your name"}
             />
-            <label className="block text-base mb-1">Email</label>
-            <input
-              type="email"
-              name="from_email"
-              placeholder="Enter your email"
-              required
-              className="block w-full bg-primary/10 placeholder:italic placeholder:opacity-80 px-6 py-4 mb-8 focus:outline-2 focus:outline-primary-light"
+            <InputField
+              label={"Email"}
+              type={"email"}
+              name={"from_email"}
+              placeholder={"Enter your email"}
             />
-            <label className="block text-base mb-1">Message</label>
-            <textarea
-              name="message"
-              placeholder="Write your message here..."
-              required
-              rows={5}
-              className="block w-full bg-primary/10 placeholder:italic placeholder:opacity-80 px-6 py-4 mb-8 focus:outline-2 focus:outline-primary-light"
+            <MessageField
+              label={"Message"}
+              name={"message"}
+              placeholder={"Write your message here..."}
             />
             <button
               type="submit"
               disabled={status === "sending"}
-              className="w-full btn-gradient text-card text-base font-semibold py-4 cursor-pointer transition-transform duration-300 active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed"
+              className="w-full flex justify-center items-center gap-4 btn-gradient text-card text-base font-semibold rounded-xl py-4 cursor-pointer transition-transform duration-300 active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed"
             >
               {status === "sending" ? "Sending..." : "Send message"}
+              <Send className="size-4.5" />
             </button>
             {status === "success" && (
               <p className="text-green-600 text-sm mt-4">
@@ -105,6 +99,6 @@ export default function Contact() {
           </form>
         </div>
       </div>
-    </section>
+    </SectionShell>
   );
 }

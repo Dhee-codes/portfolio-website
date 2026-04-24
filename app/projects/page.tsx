@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { ChevronLeft } from "lucide-react";
+import { BackLink } from "@/components/ui/BackLink";
 import { projects } from "@/lib/projects";
 import { ProjectCard } from "@/components/ui/ProjectCard";
 
@@ -11,11 +10,7 @@ export const metadata = {
 export default function Projects() {
   return (
     <main className="px-8 md:px-12 lg:px-32 py-30 md:py-40">
-      <Link href="/" className="text-lg mb-10 inline-block hover:underline">
-        <span className="flex justify-center items-center gap-4">
-          <ChevronLeft /> Back to home
-        </span>
-      </Link>
+      <BackLink href="/" label="Back to home" />
 
       <h2 className="text-sz-sect text-center mb-12 md:mb-20">All Projects</h2>
 

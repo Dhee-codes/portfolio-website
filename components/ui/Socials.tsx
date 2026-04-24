@@ -1,4 +1,4 @@
-export const Socials = ({ size = 32, className = "" }) => {
+export const Socials = ({ size = 28, className = "" }) => {
   const iconStyle = { width: size, height: size };
 
   const socialLinks = [

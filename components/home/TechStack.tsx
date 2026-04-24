@@ -1,6 +1,6 @@
 "use client";
 
-// import { motion } from "framer-motion";
+import { SectionShell } from "./SectionShell";
 
 const techs = [
   {
@@ -43,14 +43,12 @@ const techs = [
 
 export default function TechStack() {
   return (
-    <section id="tech-stack" className="px-8 md:px-12 lg:px-32 py-16 mb-16">
-      <h2 className="text-sz-sect text-center mb-20">Tech Stack</h2>
-
+    <SectionShell id="teck-stack" header="Tech Stack">
       <div className="grid grid-cols-3 md:grid-cols-[repeat(auto-fit,minmax(100px,1fr))] gap-6 md:gap-8 place-items-center">
         {techs.map((tech) => (
           <div
             key={tech.name}
-            className="flex flex-col justify-center items-center gap-3 w-full aspect-square bg-card rounded-sm transition-all duration-300 shadow-lg hover:el-shadow group"
+            className="flex flex-col justify-center items-center gap-3 w-full aspect-square bg-card rounded-2xl transition-all duration-300 shadow-lg hover:el-shadow group"
           >
             <svg
               role="img"
@@ -66,6 +64,6 @@ export default function TechStack() {
           </div>
         ))}
       </div>
-    </section>
+    </SectionShell>
   );
 }

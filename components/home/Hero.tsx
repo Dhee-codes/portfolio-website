@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-// import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 
 export default function Hero() {
@@ -21,7 +20,7 @@ export default function Hero() {
           <span className="gradient-highlight">the digital world</span>
         </h1>
 
-        <p className="flex flex-wrap text-sz-md justify-center font-medium mb-16 tracking-normal">
+        <p className="flex flex-wrap text-sz-md justify-center font-medium mb-12 md:mb-16 tracking-normal">
           I&apos;m Divine Obiorah, a Frontend Developer building clean,
           responsive and interactive web experiences.
         </p>
@@ -30,7 +29,7 @@ export default function Hero() {
           <Link
             href="/#projects"
             onClick={handleExplore}
-            className="inline-block bg-foreground text-card text-base font-bold px-8 md:px-10 py-4 md:py-5 focus:ring-accent hover:scale-105 transition-transform duration-300"
+            className="inline-block bg-foreground el-shadow text-card text-base font-bold rounded-xl px-8 py-4 focus:ring-accent hover:scale-105 transition-transform duration-300"
           >
             Explore my work
           </Link>
