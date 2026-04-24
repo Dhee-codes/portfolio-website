@@ -35,7 +35,7 @@ export default async function ProjectDetails({
   return (
     <main className="px-8 md:px-12 lg:px-32 py-30 md:py-40">
       <BackLink href="/projects" label="Back to projects" />
-      <div className="relative w-full h-96 mb-12">
+      <div className="relative w-full h-48 md:h-84 lg:h-102 mb-12">
         {project.demoVideo ? (
           <video
             src={project.demoVideo}
@@ -56,7 +56,7 @@ export default async function ProjectDetails({
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16">
         <div className="md:col-span-2">
-          <h1 className="text-sz-lg mb-6">{project.title}</h1>
+          <h1 className="text-sz-sect mb-6">{project.title}</h1>
           <p className="text-sz-md mb-12">{project.fullDescription}</p>
           <h3 className="text-sz-subsect mb-4">My Role</h3>
           <p className="text-sz-md mb-12">{project.role}</p>

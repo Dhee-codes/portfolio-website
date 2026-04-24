@@ -16,22 +16,6 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    slug: "chuks-kitchen",
-    title: "Chuks Kitchen",
-    shortDescription:
-      "A high-fidelity Nigerian food ordering platform frontend built from a complex Figma spec, featuring advanced filtering logic and a modular component library.",
-    fullDescription:
-      "Chuks Kitchen is a food ordering platform frontend I built during my internship at Trueminds Innovations Ltd. The project involved translating a detailed Figma spec into a fully responsive interface using Next.js App Router, TypeScript, Tailwind CSS, Shadcn UI, and Radix primitives. I implemented advanced client-side filtering logic including derived virtual categories like 'Popular Items' rendered via array reduction. The project is structured with route groups, shared utilities, and a modular component library built for long-term maintainability.",
-    role: "Frontend developer, responsible for implementing the full UI from Figma designs including responsive layouts, accessible components, and client-side filtering logic.",
-    challenges:
-      "Implementing derived virtual menu categories that don't exist in the data but are computed dynamically from it, required thinking carefully about data transformation and rendering logic.",
-    techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
-    myUrl: "https://chuks-kitchen-gamma.vercel.app/",
-    githubUrl: "https://github.com/Dhee-codes/chuks-kitchen",
-    featured: true,
-    coverImage: "/images/projects/chuks-kitchen.png",
-  },
-  {
     slug: "nerstagric",
     title: "NerstAgric",
     shortDescription:
@@ -46,6 +30,22 @@ export const projects: Project[] = [
     officialUrl: "https://nerstagric.com/",
     featured: true,
     coverImage: "/images/projects/nerstagric.png",
+  },
+  {
+    slug: "chuks-kitchen",
+    title: "Chuks Kitchen",
+    shortDescription:
+      "A high-fidelity Nigerian food ordering platform frontend built from a complex Figma spec, featuring advanced filtering logic and a modular component library.",
+    fullDescription:
+      "Chuks Kitchen is a food ordering platform frontend I built during my internship at Trueminds Innovations Ltd. The project involved translating a detailed Figma spec into a fully responsive interface using Next.js App Router, TypeScript, Tailwind CSS, Shadcn UI, and Radix primitives. I implemented advanced client-side filtering logic including derived virtual categories like 'Popular Items' rendered via array reduction. The project is structured with route groups, shared utilities, and a modular component library built for long-term maintainability.",
+    role: "Frontend developer, responsible for implementing the full UI from Figma designs including responsive layouts, accessible components, and client-side filtering logic.",
+    challenges:
+      "Implementing derived virtual menu categories that don't exist in the data but are computed dynamically from it, required thinking carefully about data transformation and rendering logic.",
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
+    myUrl: "https://chuks-kitchen-gamma.vercel.app/",
+    githubUrl: "https://github.com/Dhee-codes/chuks-kitchen",
+    featured: true,
+    coverImage: "/images/projects/chuks-kitchen.png",
   },
   {
     slug: "spryone",
