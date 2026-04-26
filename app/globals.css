@@ -27,7 +27,7 @@
   --color-card: var(--card);
   --color-text-muted: var(--text-muted);
 
-  --text-sz-xl: clamp(1.75rem, calc(2.857vw + 1.17rem), 3.75rem);
+  --text-sz-xl: clamp(2rem, calc(2.5vw + 1.5rem), 3.75rem);
   --text-sz-lg: clamp(1.5rem, calc(2.142vw + 1.366rem), 3rem);
   --text-sz-sect: clamp(1.625rem, calc(0.892vw + 1.446rem), 2.25rem);
   --text-sz-subsect: clamp(1.125rem, calc(0.535vw + 1.232rem), 1.5rem);
@@ -45,11 +45,15 @@
   --text-muted: #a9abb2;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-inter), sans-serif;
-  line-height: 1.6;
+  line-height: 1.4;
 }
 
 h1,

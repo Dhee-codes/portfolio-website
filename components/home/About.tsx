@@ -19,19 +19,28 @@ export default function About() {
       className="min-h-screen grid grid-cols-1 md:grid-cols-2 gap-4 px-8 md:px-12 lg:px-32 py-16 mb-16"
     >
       <div className="flex flex-col justify-center py-12">
-        <h2 className="text-sz-lg mb-2 md:mb-4 leading-tight">
+        <h2 className="text-sz-lg mb-2 leading-tight">
           Frontend <span className="gradient-highlight">Developer</span>
         </h2>
-        <h3 className="text-primary-light text-sz-md font-medium mb-8 md:mb-12">
-          Crafting with React, Next.js & TypeScript
+        <h3 className="text-primary-light text-sz-md font-medium mb-6">
+          Every spec is a promise. I keep it.
         </h3>
-        <p className="text-sz-md tracking-wide mb-16">
-          I&apos;m a Computer Science student at the University of Ibadan with a
-          passion for building clean, responsive and interactive web
-          experiences. I recently completed an internship where I built and
-          shipped real products using React, Next.js, TypeScript, and Tailwind
-          CSS. and I&apos;m just getting started.
-        </p>
+        <div className="text-sz-md tracking-wide mb-16">
+          <p className="mb-4">
+            My work lives at the intersection of design fidelity and engineering
+            judgment. I focus on bridging the gap between design specs and a
+            functional user experience, especially when the design doesn&apos;t
+            account for the messiness of the real world.
+          </p>
+          <p>
+            I&apos;m in my fourth year of Computer Science at the University of
+            Ibadan. I&apos;ve spent my internships shipping production code in
+            Next.js and TypeScript. What those experiences taught me is that a
+            design is a starting point. The engineering has to handle everything
+            the design didn&apos;t anticipate, the missing screens, the edge
+            cases, the states nobody drew.
+          </p>
+        </div>
         <div className="flex flex-col lg:flex-row text-center gap-6">
           <LinkBtn
             href="#projects"

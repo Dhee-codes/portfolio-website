@@ -13,16 +13,17 @@ export default function Hero() {
   };
 
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center text-center px-2 pt-20 md:pt-22">
-      <div className="md:w-[65%]">
-        <h1 className="text-sz-xl mb-6 leading-tight">
-          Crafting seamless experiences for{" "}
-          <span className="gradient-highlight">the digital world</span>
+    <section className="min-h-screen flex flex-col justify-center items-center text-center px-5 pt-20 md:pt-22">
+      <div className="md:max-w-[66%]">
+        <h1 className="text-sz-xl mb-6 leading-tight max-w-[16ch]">
+          Aligning design precision with{" "}
+          <span className="gradient-highlight">engineering intuition</span>
         </h1>
 
-        <p className="flex flex-wrap text-sz-md justify-center font-medium mb-12 md:mb-16 tracking-normal">
-          I&apos;m Divine Obiorah, a Frontend Developer building clean,
-          responsive and interactive web experiences.
+        <p className="flex flex-wrap text-sz-md leading-[1.2] justify-center font-medium mb-12 md:mb-16">
+          I&apos;m Divine Obiorah, a Frontend Developer, I build interfaces from
+          design specs, pixel-accurate where possible, and better where it
+          isn&apos;t.
         </p>
 
         <div>
@@ -31,7 +32,7 @@ export default function Hero() {
             onClick={handleExplore}
             className="inline-block bg-foreground el-shadow text-card text-base font-bold rounded-xl px-8 py-4 focus:ring-accent hover:scale-105 transition-transform duration-300"
           >
-            Explore my work
+            See my work
           </Link>
         </div>
       </div>

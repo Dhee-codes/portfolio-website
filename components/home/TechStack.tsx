@@ -43,7 +43,7 @@ const techs = [
 
 export default function TechStack() {
   return (
-    <SectionShell id="teck-stack" header="Tech Stack">
+    <SectionShell id="tech-stack" header="Tech Stack">
       <div className="grid grid-cols-3 md:grid-cols-[repeat(auto-fit,minmax(100px,1fr))] gap-6 md:gap-8 place-items-center">
         {techs.map((tech) => (
           <div

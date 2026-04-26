@@ -4,11 +4,12 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { Logo } from "../Logo";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { ModeToggle } from "../ui/ModeToggle";
 
 export const navLinks = [
-  { label: "Home", href: "/" },
+  { label: "About", href: "/#about" },
+  { label: "Tech Stack", href: "/#tech-stack" },
   { label: "Projects", href: "/#projects" },
   { label: "Contact", href: "/#contact" },
 ];
@@ -27,6 +28,9 @@ export default function Navbar() {
     router.push("/");
   };
 
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
   return (
     <>
       <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-card/60">
@@ -35,38 +39,42 @@ export default function Navbar() {
             <Logo className="w-32 md:w-45 h-auto" />
           </Link>
 
-          <ul className="hidden md:flex gap-6 list-none">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                {link.label === "Home" ? (
-                  <Link
-                    href="/"
-                    onClick={handleHomeClick}
-                    className={linkClass}
-                  >
-                    {link.label}
-                  </Link>
-                ) : (
-                  <Link href={link.href} className={linkClass}>
-                    {link.label}
-                  </Link>
-                )}
-              </li>
-            ))}
-          </ul>
+          {isHome && (
+            <ul className="hidden md:flex gap-6 list-none">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  {link.label === "Home" ? (
+                    <Link
+                      href="/"
+                      onClick={handleHomeClick}
+                      className={linkClass}
+                    >
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <Link href={link.href} className={linkClass}>
+                      {link.label}
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </ul>
+          )}
 
           <div className="flex justify-center items-center max-sm:gap-4">
             <ModeToggle />
 
-            <button
-              className="md:hidden"
-              onClick={() => setIsOpen(true)}
-              aria-expanded={isOpen}
-              aria-controls="mobile-menu"
-              aria-label="Open menu"
-            >
-              <Menu className="size-8 p-1 rounded-lg hover:border hover:border-primary hover:text-primary transition-colors" />
-            </button>
+            {isHome && (
+              <button
+                className="md:hidden"
+                onClick={() => setIsOpen(true)}
+                aria-expanded={isOpen}
+                aria-controls="mobile-menu"
+                aria-label="Open menu"
+              >
+                <Menu className="size-8 p-1 rounded-lg hover:border hover:border-primary hover:text-primary transition-colors" />
+              </button>
+            )}
           </div>
         </nav>
       </header>
