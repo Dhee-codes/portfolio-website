@@ -17,8 +17,33 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "DheeCodes | Frontend Developer",
-  description: "Portfolio of Divine Obiorah, a Frontend Developer.",
+  title: "Divine Obiorah | Frontend Developer",
+  description:
+    "Frontend Developer specializing in pixel-accurate, accessible interfaces using Next.js, React, and TypeScript. Explore my portfolio and get in touch today!",
+  keywords: [
+    "Frontend Developer",
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "Divine Obiorah",
+  ],
+  authors: [{ name: "Divine Obiorah" }],
+  openGraph: {
+    title: "Divine Obiorah | Frontend Developer",
+    description:
+      "Frontend Developer specializing in pixel-accurate, accessible interfaces using Next.js, React, and TypeScript. Explore my portfolio and get in touch today!",
+    url: "https://dheecodes.vercel.app",
+    siteName: "DheeCodes",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Divine Obiorah | Frontend Developer",
+    description:
+      "Frontend Developer specializing in pixel-accurate, accessible interfaces using Next.js, React, and TypeScript. Explore my portfolio and get in touch today!",
+    creator: "@Dheecodes",
+  },
 };
 
 export default function RootLayout({
@@ -30,10 +55,15 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
+      data-scroll-behavior="smooth"
       className={`${gothic.variable} ${inter.variable} antialiased`}
     >
       <body className="min-h-screen flex flex-col">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem={true}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem={true}
+        >
           <Navbar />
           {children}
           <Footer />

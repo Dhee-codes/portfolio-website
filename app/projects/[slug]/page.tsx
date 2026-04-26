@@ -19,7 +19,7 @@ export async function generateMetadata({
   if (!project) return {};
   return {
     title: `${project.title} | DheeCodes`,
-    description: project.shortDescription,
+    description: project.summary,
   };
 }
 
@@ -62,15 +62,15 @@ export default async function ProjectDetails({
           )}
         </div>
         <div className="lg:col-span-3">
-          <h1 className="text-sz-sect mb-6">{project.title}</h1>
-          <p className="text-sz-md mb-12">{project.fullDescription}</p>
+          <h1 className="text-sz-subsect mb-6">{project.title}</h1>
+          <p className="text-sz-md mb-12">{project.description}</p>
         </div>
         <div className="lg:row-start-1 lg:col-start-3">
-          <h3 className="text-sz-subsect mb-6">Tech Stack</h3>
+          <h3 className="text-sz-md mb-6">Tech Stack</h3>
           <div className="mb-12">
             <StackList stack={project.techStack} />
           </div>
-          <h3 className="text-sz-subsect mb-6">Links</h3>
+          <h3 className="text-sz-md mb-6">Links</h3>
           <div className="flex flex-col gap-4">
             <ExternalLinkBtn
               href={project.myUrl}
