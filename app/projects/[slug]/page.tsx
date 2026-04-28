@@ -18,7 +18,7 @@ export async function generateMetadata({
   const project = getProjectBySlug(slug);
   if (!project) return {};
   return {
-    title: `${project.title} | DheeCodes`,
+    title: `${project.title} | Divine Obiorah`,
     description: project.summary,
   };
 }
@@ -41,6 +41,11 @@ export default async function ProjectDetails({
           { label: project.title },
         ]}
       />
+
+      <h1 className="text-sz-sect text-center mb-12 md:mb-20">
+        {project.title}
+      </h1>
+
       <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-x-18">
         <div className="relative lg:col-span-2 w-full aspect-video mb-12">
           {project.demoVideo ? (
@@ -57,20 +62,41 @@ export default async function ProjectDetails({
               src={project.coverImage}
               alt={project.title}
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 66.67vw, 33vw"
               className="object-cover"
             />
           )}
         </div>
         <div className="lg:col-span-3">
-          <h1 className="text-sz-subsect mb-6">{project.title}</h1>
-          <p className="text-sz-md mb-12">{project.description}</p>
+          <div className="text-sz-md">
+            <h3 className="mb-4">Brief</h3>
+            <p className="mb-12">{project.description}</p>
+          </div>
+          {project.implementation && (
+            <div className="text-sz-md">
+              <h3 className="mb-4">Implementation</h3>
+              <p className="mb-12">{project.implementation}</p>
+            </div>
+          )}
+          {project.challenges && (
+            <div className="text-sz-md">
+              <h3 className="mb-4">Challenges</h3>
+              <ul className="mb-12 list-disc list-outside pl-6">
+                {project.challenges.map((challenge) => (
+                  <li key={challenge} className="pl-2 md:pl-4">
+                    {challenge}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
         <div className="lg:row-start-1 lg:col-start-3">
-          <h3 className="text-sz-md mb-6">Tech Stack</h3>
+          <h3 className="text-sz-md mb-4">Tech Stack</h3>
           <div className="mb-12">
             <StackList stack={project.techStack} />
           </div>
-          <h3 className="text-sz-md mb-6">Links</h3>
+          <h3 className="text-sz-md mb-4">Links</h3>
           <div className="flex flex-col gap-4">
             <ExternalLinkBtn
               href={project.myUrl}

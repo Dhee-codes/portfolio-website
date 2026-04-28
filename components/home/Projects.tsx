@@ -9,7 +9,7 @@ const featured = getFeaturedProjects();
 
 export const Projects = () => {
   return (
-    <SectionShell id="projects" header="Projects">
+    <SectionShell id="projects" header="Selected Works">
       <div
         id="projects"
         className="grid grid-cols-1 md:grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-x-8 gap-y-16 mb-16"

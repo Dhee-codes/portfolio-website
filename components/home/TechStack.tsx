@@ -14,8 +14,8 @@ const techGroups = [
   {
     group: "Frameworks & Libraries",
     techs: [
-      { name: "React", icon: "devicon:react" },
       { name: "Next.js", icon: "devicon:nextjs", invert: true },
+      { name: "React", icon: "devicon:react" },
       { name: "Framer Motion", icon: "devicon:framermotion", invert: true },
     ],
   },
@@ -40,7 +40,7 @@ const techGroups = [
 
 export const TechStack = () => {
   return (
-    <SectionShell id="tech-stack" header="Tech Stack">
+    <SectionShell id="tech-stack" header="Technologies">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {techGroups.map((group) => (
           <div key={group.group} className="bg-card rounded-2xl p-6 shadow-lg">

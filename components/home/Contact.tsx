@@ -36,7 +36,7 @@ export const Contact = () => {
   };
 
   return (
-    <SectionShell id="contact" header="Contact">
+    <SectionShell id="contact" header="Reach Out">
       <div
         id="contact"
         className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-28"
