@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { LinkBtn, DownloadBtn } from "../ui/Button";
 
-export default function About() {
+export const About = () => {
   const router = useRouter();
 
   const handleExplore = (e: React.MouseEvent) => {

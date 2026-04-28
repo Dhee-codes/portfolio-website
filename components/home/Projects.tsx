@@ -7,7 +7,7 @@ import { LinkBtn } from "../ui/Button";
 
 const featured = getFeaturedProjects();
 
-export default function Projects() {
+export const Projects = () => {
   return (
     <SectionShell id="projects" header="Projects">
       <div

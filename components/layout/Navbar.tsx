@@ -9,8 +9,8 @@ import { ModeToggle } from "../ui/ModeToggle";
 
 export const navLinks = [
   { label: "About", href: "/#about" },
-  { label: "Tech Stack", href: "/#tech-stack" },
   { label: "Projects", href: "/#projects" },
+  { label: "Tech Stack", href: "/#tech-stack" },
   { label: "Contact", href: "/#contact" },
 ];
 

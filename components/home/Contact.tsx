@@ -8,7 +8,7 @@ import { InputField, MessageField } from "../ui/ContactField";
 import { ContactAddress } from "../ui/ContactAddress";
 import { Send } from "lucide-react";
 
-export default function Contact() {
+export const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const [status, setStatus] = useState<
     "idle" | "sending" | "success" | "error"
