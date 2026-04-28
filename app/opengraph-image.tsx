@@ -14,6 +14,7 @@ export default async function OGImage() {
     join(process.cwd(), "public/images/profile.png"),
     "base64",
   );
+  
   const profileSrc = `data:image/png;base64,${profileData}`;
 
   return new ImageResponse(
