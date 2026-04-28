@@ -29,8 +29,7 @@ export const Contact = () => {
       );
       setStatus("success");
       formRef.current.reset();
-    } catch (err) {
-      console.error("EmailJS error:", err);
+    } catch {
       setStatus("error");
     }
   };
