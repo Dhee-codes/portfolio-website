@@ -22,7 +22,7 @@ export const ContactAddress = () => {
         <a
           key={a.href}
           href={a.href}
-          className="text-sm flex items-center gap-2"
+          className="text-sm md:text-base flex items-center gap-2"
         >
           {a.icon}
           {a.label}
