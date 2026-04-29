@@ -72,10 +72,10 @@ export default async function ProjectDetails({
             <h3 className="mb-4">Brief</h3>
             <p className="mb-12">{project.description}</p>
           </div>
-          {project.implementation && (
+          {project.approach && (
             <div className="text-sz-md">
-              <h3 className="mb-4">Implementation</h3>
-              <p className="mb-12">{project.implementation}</p>
+              <h3 className="mb-4">Approach</h3>
+              <p className="mb-12">{project.approach}</p>
             </div>
           )}
           {project.challenges && (
@@ -83,7 +83,7 @@ export default async function ProjectDetails({
               <h3 className="mb-4">Challenges</h3>
               <ul className="mb-12 list-disc list-outside pl-6">
                 {project.challenges.map((challenge) => (
-                  <li key={challenge} className="pl-2 md:pl-4">
+                  <li key={challenge} className="pl-2 md:pl-4 mb-2">
                     {challenge}
                   </li>
                 ))}
