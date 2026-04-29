@@ -2,10 +2,13 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { motion, useReducedMotion } from "framer-motion";
 import { LinkBtn, DownloadBtn } from "../ui/Button";
+import { fadeLeft, fadeRight } from "@/lib/motionVariants";
 
 export const About = () => {
   const router = useRouter();
+  const prefersReducedMotion = useReducedMotion();
 
   const handleExplore = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -18,7 +21,14 @@ export const About = () => {
       id="about"
       className="min-h-screen grid grid-cols-1 md:grid-cols-2 gap-4 px-8 md:px-12 lg:px-32 py-16 mb-16"
     >
-      <div className="flex flex-col justify-center py-12">
+      <motion.div
+        className="flex flex-col justify-center py-12"
+        variants={fadeLeft}
+        initial={prefersReducedMotion ? "visible" : "hidden"}
+        whileInView="visible"
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
         <h2 className="text-sz-lg mb-2 leading-tight">
           Frontend <span className="gradient-highlight">Developer</span>
         </h2>
@@ -54,9 +64,16 @@ export const About = () => {
             className="bg-foreground"
           />
         </div>
-      </div>
+      </motion.div>
 
-      <div className="flex justify-center items-center order-first md:order-0">
+      <motion.div
+        className="flex justify-center items-center order-first md:order-0"
+        variants={fadeRight}
+        initial={prefersReducedMotion ? "visible" : "hidden"}
+        whileInView="visible"
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
         <Image
           src="/images/profile.png"
           alt="Divine Obiorah"
@@ -64,7 +81,7 @@ export const About = () => {
           height={300}
           className="md:w-4/5 rounded-full el-shadow"
         />
-      </div>
+      </motion.div>
     </section>
   );
 }

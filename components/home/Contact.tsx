@@ -2,14 +2,17 @@
 
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { motion, useReducedMotion } from "framer-motion";
 import { SectionShell } from "./SectionShell";
 import { Socials } from "../ui/Socials";
 import { InputField, MessageField } from "../ui/ContactField";
 import { ContactAddress } from "../ui/ContactAddress";
 import { Send } from "lucide-react";
+import { fadeLeft, fadeRight } from "@/lib/motionVariants";
 
 export const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null);
+  const prefersReducedMotion = useReducedMotion();
   const [status, setStatus] = useState<
     "idle" | "sending" | "success" | "error"
   >("idle");
@@ -40,7 +43,13 @@ export const Contact = () => {
         id="contact"
         className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-28"
       >
-        <div>
+        <motion.div
+          variants={fadeLeft}
+          initial={prefersReducedMotion ? "visible" : "hidden"}
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <h3 className="text-primary text-sz-subsect font-medium mb-6">
             Connect with me
           </h3>
@@ -53,9 +62,15 @@ export const Contact = () => {
           <ContactAddress />
 
           <Socials />
-        </div>
+        </motion.div>
 
-        <div>
+        <motion.div
+          variants={fadeRight}
+          initial={prefersReducedMotion ? "visible" : "hidden"}
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           <h3 className="text-primary text-sz-subsect font-medium mb-6">
             Send me a message
           </h3>
@@ -96,7 +111,7 @@ export const Contact = () => {
               </p>
             )}
           </form>
-        </div>
+        </motion.div>
       </div>
     </SectionShell>
   );

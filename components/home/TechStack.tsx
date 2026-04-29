@@ -1,4 +1,5 @@
 import { Icon } from "@iconify/react";
+import { motion, useReducedMotion } from "framer-motion";
 import { SectionShell } from "./SectionShell";
 
 const techGroups = [
@@ -38,7 +39,23 @@ const techGroups = [
   },
 ];
 
+const listVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.08,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, x: 16 },
+  visible: { opacity: 1, x: 0 },
+};
+
 export const TechStack = () => {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
     <SectionShell id="tech-stack" header="Technologies">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -48,17 +65,28 @@ export const TechStack = () => {
               {group.group}
             </h3>
             <div className="w-full h-px bg-primary mb-6" />
-            <ul className="flex flex-col gap-4">
+            <motion.ul
+              className="flex flex-col gap-4"
+              variants={listVariants}
+              initial={prefersReducedMotion ? "visible" : "hidden"}
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
               {group.techs.map((tech) => (
-                <li key={tech.name} className="flex items-center gap-6">
+                <motion.li
+                  key={tech.name}
+                  className="flex items-center gap-6"
+                  variants={itemVariants}
+                  transition={{ duration: 0.4 }}
+                >
                   <Icon
                     icon={tech.icon}
                     className={`w-5 h-5 shrink-0 ${tech.invert ? "dark:invert" : ""}`}
                   />
                   <span className="text-sm text-text-muted">{tech.name}</span>
-                </li>
+                </motion.li>
               ))}
-            </ul>
+            </motion.ul>
           </div>
         ))}
       </div>
