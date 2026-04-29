@@ -48,7 +48,7 @@ export const Contact = () => {
           initial={prefersReducedMotion ? "visible" : "hidden"}
           whileInView="visible"
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8 }}
         >
           <h3 className="text-primary text-sz-subsect font-medium mb-6">
             Connect with me
@@ -69,7 +69,7 @@ export const Contact = () => {
           initial={prefersReducedMotion ? "visible" : "hidden"}
           whileInView="visible"
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.8 }}
         >
           <h3 className="text-primary text-sz-subsect font-medium mb-6">
             Send me a message

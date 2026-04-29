@@ -27,7 +27,7 @@ export const About = () => {
         initial={prefersReducedMotion ? "visible" : "hidden"}
         whileInView="visible"
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.8 }}
       >
         <h2 className="text-sz-lg mb-2 leading-tight">
           Frontend <span className="gradient-highlight">Developer</span>
@@ -72,7 +72,7 @@ export const About = () => {
         initial={prefersReducedMotion ? "visible" : "hidden"}
         whileInView="visible"
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.8 }}
       >
         <Image
           src="/images/profile.png"

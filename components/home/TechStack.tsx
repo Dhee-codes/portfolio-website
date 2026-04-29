@@ -49,7 +49,7 @@ const listVariants = {
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, x: 16 },
+  hidden: { opacity: 0, x: 20 },
   visible: { opacity: 1, x: 0 },
 };
 
@@ -77,7 +77,7 @@ export const TechStack = () => {
                   key={tech.name}
                   className="flex items-center gap-6"
                   variants={itemVariants}
-                  transition={{ duration: 0.4 }}
+                  transition={{ duration: 0.6 }}
                 >
                   <Icon
                     icon={tech.icon}

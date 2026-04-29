@@ -17,7 +17,7 @@ export const Hero = () => {
 
   return (
     <section className="min-h-screen flex flex-col justify-center items-center text-center px-5 pt-20 md:pt-22">
-      <div className="md:max-w-[66%]">
+      <div className="md:max-w-[70%] flex flex-col items-center">
         <motion.h1
           className="text-sz-xl mb-6 leading-tight max-w-[16ch]"
           variants={fadeUp}
@@ -30,7 +30,7 @@ export const Hero = () => {
         </motion.h1>
 
         <motion.p
-          className="flex flex-wrap text-sz-md leading-[1.2] justify-center font-medium mb-12 md:mb-16"
+          className="flex flex-wrap text-sz-md leading-[1.2] justify-center font-medium max-w-[60ch] mb-12 md:mb-16"
           variants={fadeIn}
           initial={prefersReducedMotion ? "visible" : "hidden"}
           animate="visible"
