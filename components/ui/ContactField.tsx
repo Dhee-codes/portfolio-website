@@ -7,7 +7,7 @@ interface FormFields {
 
 const labelStyles = "block text-base mb-1";
 
-const inputStyles = "block w-full bg-primary/10 placeholder:italic placeholder:opacity-80 rounded-xl px-6 py-4 mb-8 focus:outline-2 focus:outline-primary-light";
+const inputStyles = "block w-full bg-primary/10 placeholder:italic placeholder:opacity-80 rounded-xl px-4 py-3 mb-8 focus:outline-2 focus:outline-primary-light";
 
 export const InputField = ({ label, type, name, placeholder }: FormFields ) => {
   return (

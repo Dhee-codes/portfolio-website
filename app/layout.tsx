@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Special_Gothic_Expanded_One, Inter } from "next/font/google";
+import { Special_Gothic_Expanded_One, Jost } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import Navbar from "@/components/layout/Navbar";
@@ -11,8 +11,8 @@ const gothic = Special_Gothic_Expanded_One({
   weight: "400",
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const jost = Jost({
+  variable: "--font-jost",
   subsets: ["latin"],
 });
 
@@ -56,7 +56,7 @@ export default function RootLayout({
       lang="en"
       suppressHydrationWarning
       data-scroll-behavior="smooth"
-      className={`${gothic.variable} ${inter.variable} antialiased`}
+      className={`${gothic.variable} ${jost.variable} antialiased`}
     >
       <body className="min-h-screen flex flex-col">
         <ThemeProvider
